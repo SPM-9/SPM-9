@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    namespace: 命名空间
+-->
+<mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.UserMapper">
+    <!--
+        数据库表的字段名称 和 实体类的属性名称 不一样，则不能自动封装数据！！！
+            解决方法：
+                * 起别名：${数据库字段名称} as ${实体类属性名称}   例如：userName as username
+                    * 缺点 每次查询都要定义一次别名   解决方式：使用sql片段
+                * resultMap（推荐）
+
+    -->
+
+    <select id="selectAll" resultType="User">
+        SELECT * FROM User;
+    </select>
+
+    <!--
+        * 参数占位符：
+            1. #{}: 会将其替换为 ? ，为了防止SQL注入
+            2. ${}: 会将其直接拼接在SQL语句上，存在SQL注入问题
+            3. 使用时机：
+                * 参数传递的时候：#{}
+                * 表名或列名不固定时：${}
+        * 特殊字符处理：
+            1. 转义字符
+            2. CDATA区
+    -->
+    <select id="selectByUID" resultType="User">
+        SELECT * FROM User WHERE uid = #{uid};
+    </select>
+    <select id="selectByLogin" resultType="User">
+        <![CDATA[
+            SELECT * FROM User WHERE userName = #{userName} && password = #{password};
+        ]]>
+    </select>
+</mapper>

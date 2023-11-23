@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <typeAliases>
+        <package name="com.fxxkyiwangchangxue.yiwangnochangxue.entity"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!-- 连接信息 -->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://1.15.179.230:3306/SPM-9?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC"/>
+                <property name="username" value="root"/>
+                <property name="password" value="114514"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!-- SQL映射文件 -->
+<!--        <mapper resource="com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/UserMapper.xml"/>--> <!-- 加载单个mapper -->
+        <!-- Mapper代理方式导入mapper包 -->
+        <package name="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper"/>
+    </mappers>
+</configuration>
