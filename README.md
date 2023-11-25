@@ -9,7 +9,8 @@
     SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
 
     // 2.获取SqlSession对象，用它执行sql
-    SqlSession sqlSession = sqlSessionFactory.openSession();
+    // openSession()传入true参数可以指定是否自动提交事务，为false或不填时增删改数据库后必须commit，否则修改无效
+    SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
     // 3.1获取Mapper接口的代理对象（每一张表所使用的Mapper不一样）
     UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
@@ -25,7 +26,7 @@
     System.out.println(user2);
     System.out.println(user3);
 
-    // 4.释放资源
+    // 4.释放资源，必须！！！
     sqlSession.close();
 
 ## ~~DAO层封装API食用方法（代码模板，可直接复制使用）~~ 写单元测试还可以，正式项目中不允许创建多个SqlSessionFactory对象！！！
