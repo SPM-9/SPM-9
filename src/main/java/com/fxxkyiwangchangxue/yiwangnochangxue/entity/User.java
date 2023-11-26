@@ -12,8 +12,16 @@ public class User {
     private String email;
     private int permission;
     private int money;
+    private boolean isChosenCourse;
 
-    public User(int uid, String userName, String password, String nickName, String email, int permission, int money) {
+    public User(String userName, String password, String nickName, String email) {
+        this.userName = userName;
+        this.password = password;
+        this.nickName = nickName;
+        this.email = email;
+    }
+
+    public User(int uid, String userName, String password, String nickName, String email, int permission, int money, boolean isChosenCourse) {
         this.uid = uid;
         this.userName = userName;
         this.password = password;
@@ -21,6 +29,7 @@ public class User {
         this.email = email;
         this.permission = permission;
         this.money = money;
+        this.isChosenCourse = isChosenCourse;
     }
 
     @Override
@@ -34,6 +43,14 @@ public class User {
                 ", permission=" + permission +
                 ", money=" + money +
                 '}';
+    }
+
+    public boolean isChosenCourse() {
+        return isChosenCourse;
+    }
+
+    public void setChosenCourse(boolean chosenCourse) {
+        isChosenCourse = chosenCourse;
     }
 
     public String getEmail() {

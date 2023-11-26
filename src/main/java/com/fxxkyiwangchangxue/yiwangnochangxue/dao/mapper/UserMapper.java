@@ -27,4 +27,17 @@ public interface UserMapper {
      */
     User selectByLogin(@Param("userName") String userName,
                        @Param("password") String password);
+
+    /**
+     * 按用户名查询用户
+     * @param userName 用户名
+     * @return User 返回User对象，未找到用户则返回null
+     */
+    User selectByUserName(String userName);
+
+    /**
+     * （可以借此返回用户id）使用用户对象注册用户，注册前务必查询用户名是否重复，否则会抛异常！！！
+     * @param user 用户对象，用户名、密码、邮箱和昵称不能为空
+     */
+    void insertByRegister(User user);
 }

@@ -7,6 +7,10 @@
     namespace: 命名空间
 -->
 <mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.UserMapper">
+    <insert id="insertByRegister" useGeneratedKeys="true" keyProperty="uid">
+        INSERT INTO User (`userName`, `password`, `nickName`, `email`)
+        VALUES (#{userName}, #{password}, #{nickName}, #{email});
+    </insert>
     <!--
         数据库表的字段名称 和 实体类的属性名称 不一样，则不能自动封装数据！！！
             解决方法：
@@ -38,5 +42,8 @@
         <![CDATA[
             SELECT * FROM User WHERE userName = #{userName} && password = #{password};
         ]]>
+    </select>
+    <select id="selectByUserName" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.User">
+        SELECT * FROM User WHERE userName = #{userName};
     </select>
 </mapper>

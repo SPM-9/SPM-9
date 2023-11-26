@@ -1,29 +1,27 @@
 package com.fxxkyiwangchangxue.yiwangnochangxue.service;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import java.io.*;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import com.fxxkyiwangchangxue.yiwangnochangxue.dao.SqlSessionFactoryUtils;
+import com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.UserMapper;
+import com.fxxkyiwangchangxue.yiwangnochangxue.entity.FinalValues;
+import com.fxxkyiwangchangxue.yiwangnochangxue.entity.User;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 @WebServlet(name = "UserRegister", value = "/UserRegister")
 public class UserRegister extends HttpServlet {
-    Connection conn;
-    PreparedStatement ps;
 
     @Override
     public void init() {
 
     }
 
-    String query = "INSERT INTO User (`userName`, `userEmail`, `password`, `userNickName`) VALUES (?, ?, ?, ?)";
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html; charset = UTF-8");
@@ -34,36 +32,32 @@ public class UserRegister extends HttpServlet {
         String password = req.getParameter("password");
         String userNickName = req.getParameter("userNickName");
 
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://1.15.179.230:3306/VideoPlayer?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "114514");
+        if (userName == null || userEmail == null || password == null || userNickName == null)
+            return;
 
-            ps = conn.prepareStatement(query);
-            ps.setString(1, userName);
-            ps.setString(2, userEmail);
-            ps.setString(3, password);
-            ps.setString(4, userNickName);
-            ps.execute();
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-            resp.setStatus(500);
-        } finally {
-            try {
-                ps.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-                resp.setStatus(500);
-            }
+        SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        // 先检查用户是否存在
+        User user = userMapper.selectByUserName(userName);
+        if (user != null) {
+            pw.print("false");
+        } else {
+            user = new User(userName, password, userNickName, userEmail);
+            userMapper.insertByRegister(user);
+            sqlSession.commit();
+            int id = user.getUid();
         }
-        pw.print(true);
+        sqlSession.close();
     }
 
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         resp.setContentType("text/html; charset = UTF-8");
         PrintWriter pw = resp.getWriter();
 
-        resp.setStatus(404);
+        doPost(req, resp);
     }
 
     @Override

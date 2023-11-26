@@ -1,21 +1,22 @@
 package com.fxxkyiwangchangxue.yiwangnochangxue.service;
 
+import java.io.*;
+
+import com.fxxkyiwangchangxue.yiwangnochangxue.dao.SqlSessionFactoryUtils;
+import com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.UserMapper;
+import com.fxxkyiwangchangxue.yiwangnochangxue.entity.FinalValues;
+import com.fxxkyiwangchangxue.yiwangnochangxue.entity.User;
 import com.google.gson.Gson;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 @WebServlet(name = "UserLogin", value = "/UserLogin")
 public class UserLogin extends HttpServlet {
-    Connection conn;
-    ResultSet rs;
-    PreparedStatement ps;
 
     @Override
     public void init() {
@@ -27,53 +28,33 @@ public class UserLogin extends HttpServlet {
         resp.setContentType("text/html; charset = UTF-8");
         PrintWriter pw = resp.getWriter();
 
-        String userName = req.getParameter("userName").trim();
-        String password = req.getParameter("password").trim();
+        String userName = req.getParameter("userName");
+        String password = req.getParameter("password");
+        if (userName == null || password == null)
+            return;
 
-        String query = "SELECT * FROM `User` WHERE `userName` = ? && `password` = ?";
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://1.15.179.230:3306/VideoPlayer?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC", "root", "114514");
+        SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-            ps = conn.prepareStatement(query);
-            ps.setString(1, userName);
-            ps.setString(2,password);
-            rs = ps.executeQuery();
-
-            if (rs.next()) {
-                // 登录成功
-                Gson json = new Gson();
-//                _4_UserBean userEntity = new _4_UserBean(
-//                        String.valueOf(rs.getInt("id")),
-//                        rs.getString("userName"),
-//                        rs.getString("userEmail"),
-//                        rs.getString("password"),
-//                        rs.getString("userNickName"),
-//                        rs.getInt("membership"),
-//                        rs.getString("favorite"));
-//                pw.print(json.toJson(userEntity));
-            } else {
-                // 登录失败
-                pw.print("false");
-            }
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-            resp.setStatus(500);
-        } finally {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+        User loginUser = userMapper.selectByLogin(userName, password);
+        if (loginUser == null) {
+            pw.print("false");
+        } else {
+            Gson gson = new Gson();
+            String json = gson.toJson(loginUser);
+            pw.print(json);
         }
+
+        sqlSession.close();
     }
 
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         resp.setContentType("text/html; charset = UTF-8");
         PrintWriter pw = resp.getWriter();
 
-        resp.setStatus(404);
+        doPost(req, resp);
     }
 
     @Override
