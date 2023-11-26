@@ -4,15 +4,12 @@ import java.io.*;
 
 import com.fxxkyiwangchangxue.yiwangnochangxue.dao.SqlSessionFactoryUtils;
 import com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.UserMapper;
-import com.fxxkyiwangchangxue.yiwangnochangxue.entity.FinalValues;
 import com.fxxkyiwangchangxue.yiwangnochangxue.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 @WebServlet(name = "UserRegister", value = "/UserRegister")
 public class UserRegister extends HttpServlet {
