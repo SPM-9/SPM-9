@@ -1,7 +1,6 @@
 package com.fxxkyiwangchangxue.yiwangnochangxue.dao;
 
 import com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.UserMapper;
-import com.fxxkyiwangchangxue.yiwangnochangxue.entity.FinalValues;
 import com.fxxkyiwangchangxue.yiwangnochangxue.entity.User;
 import com.google.gson.Gson;
 import org.apache.ibatis.io.Resources;

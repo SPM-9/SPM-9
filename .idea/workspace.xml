@@ -9,7 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="用户登录、注册" />
+    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="用户登录、注册">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/AnnouncementMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/NotificationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/StudyTaskMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/Announcement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/StudyTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/GetNotifications.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/AnnouncementMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/NotificationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/StudyTaskMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/AnnouncementTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/NotificationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822/storage_v2/_src_/schema/SPM-9.PCO3BA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822/storage_v2/_src_/schema/SPM-9.PCO3BA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/FinalValues.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/UserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/UserRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/UserRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/UserTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Servlet" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -108,9 +132,8 @@
       <recent name="com.fxxkyiwangchangxue.yiwangnochangxue.DAO" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserTest.testRegister">
-    <configuration name="MyBatisDemo2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.MyBatisDemo2" />
+  <component name="RunManager" selected="JUnit.NotificationTest.testSelectAll">
+    <configuration name="AnnouncementTest.testSelectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YiWangNoChangXue" />
       <extension name="coverage">
         <pattern>
@@ -118,6 +141,26 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.AnnouncementTest" />
+      <option name="METHOD_NAME" value="testSelectAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificationTest.testSelectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="YiWangNoChangXue" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.NotificationTest" />
+      <option name="METHOD_NAME" value="testSelectAll" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,22 +192,6 @@
       <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
       <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.UserTest" />
       <option name="METHOD_NAME" value="testRegister" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTest.testSelectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YiWangNoChangXue" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.UserTest" />
-      <option name="METHOD_NAME" value="testSelectAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -273,20 +300,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.AnnouncementTest.testSelectAll" />
+      <item itemvalue="JUnit.NotificationTest.testSelectAll" />
       <item itemvalue="JUnit.UserTest.testRegister" />
       <item itemvalue="JUnit.UserTest.testLogin" />
-      <item itemvalue="JUnit.UserTest.testSelectAll" />
       <item itemvalue="JUnit.UserTest.testSelectByUID" />
       <item itemvalue="Tomcat 服务器.Local Tomcat 10.1.13" />
-      <item itemvalue="应用程序.MyBatisDemo2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NotificationTest.testSelectAll" />
+        <item itemvalue="JUnit.AnnouncementTest.testSelectAll" />
         <item itemvalue="JUnit.UserTest.testRegister" />
         <item itemvalue="JUnit.UserTest.testLogin" />
         <item itemvalue="JUnit.UserTest.testSelectByUID" />
-        <item itemvalue="JUnit.UserTest.testSelectAll" />
-        <item itemvalue="应用程序.MyBatisDemo2" />
       </list>
     </recent_temporary>
   </component>
@@ -305,7 +332,10 @@
       <workItem from="1700790889460" duration="8015000" />
       <workItem from="1700837516008" duration="130000" />
       <workItem from="1700932002745" duration="3792000" />
-      <workItem from="1700987614395" duration="956000" />
+      <workItem from="1700987614395" duration="1440000" />
+      <workItem from="1701016772548" duration="2306000" />
+      <workItem from="1701019104535" duration="828000" />
+      <workItem from="1701024044350" duration="6592000" />
     </task>
     <task id="LOCAL-00001" summary="项目基本">
       <option name="closed" value="true" />
@@ -347,7 +377,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700988550905</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="用户登录、注册">
+      <option name="closed" value="true" />
+      <created>1700988596343</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700988596343</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

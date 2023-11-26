@@ -1,16 +1,17 @@
 package com.fxxkyiwangchangxue.yiwangnochangxue.entity;
 
+import java.io.Serializable;
+
 /**
  * 用户实体类
  */
 
-public class User {
+public class User implements Serializable {
     private int uid;
     private String userName;
     private String password;
     private String nickName;
     private String email;
-    private int permission;
     private int money;
     private boolean isChosenCourse;
 
@@ -27,7 +28,6 @@ public class User {
         this.password = password;
         this.nickName = nickName;
         this.email = email;
-        this.permission = permission;
         this.money = money;
         this.isChosenCourse = isChosenCourse;
     }
@@ -40,7 +40,6 @@ public class User {
                 ", password='" + password + '\'' +
                 ", nickName='" + nickName + '\'' +
                 ", email='" + email + '\'' +
-                ", permission=" + permission +
                 ", money=" + money +
                 '}';
     }
@@ -94,14 +93,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public int getPermission() {
-        return permission;
-    }
-
-    public void setPermission(int permission) {
-        this.permission = permission;
     }
 
     public int getMoney() {
