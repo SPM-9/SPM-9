@@ -1,7 +1,9 @@
 package com.fxxkyiwangchangxue.yiwangnochangxue.dao;
 
 import com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.UserMapper;
+import com.fxxkyiwangchangxue.yiwangnochangxue.entity.FinalValues;
 import com.fxxkyiwangchangxue.yiwangnochangxue.entity.User;
+import com.google.gson.Gson;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -59,20 +61,42 @@ public class UserTest {
 
     @Test
     public void testLogin() throws IOException {
-        String resource = "mybatis-config.xml";
-        InputStream inputStream = Resources.getResourceAsStream(resource);
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        String userName = "ZhijiangDiana";
+        String password = "114514";
 
+        SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-        User loginSuccess = userMapper.selectByLogin("ZhijiangDiana", "114514");
-        User userNameFail = userMapper.selectByLogin("114514", "114514");
-        User passwordFail = userMapper.selectByLogin("ZhijiangDiana", "1919810");
+        User loginUser = userMapper.selectByLogin(userName, password);
+        if (loginUser == null) {
+            System.out.print("false");
+        } else {
+            Gson gson = new Gson();
+            String json = gson.toJson(loginUser);
+            System.out.print(json);
+        }
 
-        System.out.println(loginSuccess);
-        System.out.println(userNameFail);
-        System.out.println(passwordFail);
+        sqlSession.close();
+    }
+
+    @Test
+    public void testRegister() throws IOException {
+        String userName = "DaoGe";
+        String password = "114514";
+        String email = "114514@qq.com";
+        String nickName = "刀哥";
+
+        SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        User user = new User(userName, password, nickName, email);
+        userMapper.insertByRegister(user);
+        // insert和update语句使用后必须commit！！！
+        sqlSession.commit();
+
+        System.out.println(user.getUid());
 
         sqlSession.close();
     }
