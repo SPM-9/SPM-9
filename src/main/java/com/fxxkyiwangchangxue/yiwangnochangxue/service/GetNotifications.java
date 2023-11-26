@@ -21,13 +21,15 @@ public class GetNotifications extends HttpServlet {
         resp.setContentType("text/html; charset = UTF-8");
         PrintWriter pw = resp.getWriter();
 
+        String lastIdx = req.getParameter("lastIndex");
         String cnt = req.getParameter("notifCount");
-        if (cnt == null)
+        if (lastIdx == null || cnt == null)
             return;
+        int lastIndex = Integer.parseInt(lastIdx);
         int count = Integer.parseInt(cnt);
 
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
-
+        // TODO: 2023/11/27 查询数据库并用JSON返回lastIndex前count个Notification对象
 
 
     }
