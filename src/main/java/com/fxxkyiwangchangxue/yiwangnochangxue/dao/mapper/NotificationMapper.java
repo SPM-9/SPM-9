@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface NotificationMapper {
     List<Notification> selectAll();
+
+    Notification selectLastIndex();
+
+    Notification selectPreviousIndex(int thisIndex);
 }

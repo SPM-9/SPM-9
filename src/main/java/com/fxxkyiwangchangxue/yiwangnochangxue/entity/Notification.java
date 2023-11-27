@@ -14,23 +14,7 @@ public class Notification implements Serializable {
     public static final int TASK = 0;
     public static final int ANNOUNCEMENT = 1;
 
-    public Notification(Integer notifId, Integer fori_taskId, Integer fori_annId, Integer notifType, String title, String body, Date uploadTime) {
-        this.notifId = notifId;
-        this.fori_taskId = fori_taskId;
-        this.fori_annId = fori_annId;
-        this.notifType = notifType;
-        this.title = title;
-        this.body = body;
-        this.uploadTime = uploadTime;
-    }
-
     public Notification() {
-    }
-
-    public Notification(Integer notifType, String title, String body) {
-        this.notifType = notifType;
-        this.title = title;
-        this.body = body;
     }
 
     public Integer getNotifId() {
