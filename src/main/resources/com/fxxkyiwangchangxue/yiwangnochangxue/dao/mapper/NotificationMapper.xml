@@ -8,4 +8,14 @@
     <select id="selectAll" resultType="Notification">
         SELECT * FROM Notification;
     </select>
+    <select id="selectLastIndex" resultType="Notification">
+        SELECT * FROM Notification
+        WHERE notifId = (SELECT MAX(notifId) FROM Notification);
+    </select>
+    <select id="selectPreviousIndex" resultType="Notification">
+        <![CDATA[
+        SELECT * FROM Notification
+        WHERE notifId = (SELECT MAX(notifId) FROM Notification WHERE notifId < #{thisIndex} LIMIT 1);
+        ]]>
+    </select>
 </mapper>

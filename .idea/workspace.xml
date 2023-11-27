@@ -2,36 +2,15 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="YiWangNoChangXue:war exploded" />
+      <artifact name="YiWangNoChangXue:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="用户登录、注册">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/AnnouncementMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/NotificationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/StudyTaskMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/Announcement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/Notification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/StudyTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/GetNotifications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/AnnouncementMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/NotificationMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/StudyTaskMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/AnnouncementTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/NotificationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822/storage_v2/_src_/schema/SPM-9.PCO3BA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822/storage_v2/_src_/schema/SPM-9.PCO3BA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/FinalValues.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/UserLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/UserRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/UserRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/UserTest.java" afterDir="false" />
+    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="GetNotification后端">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/GetNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/GetNotification.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,12 +78,12 @@
     &quot;git-widget-placeholder&quot;: &quot;ZhijiangDiana-Branch&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/14838/IdeaProjects/YiWangNoChangXue/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/14838/IdeaProjects/YiWangNoChangXue&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/14838/IdeaProjects/YiWangNoChangXue/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
@@ -119,6 +98,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\resources" />
       <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\java\com\fxxkyiwangchangxue\yiwangnochangxue\Service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -132,7 +112,7 @@
       <recent name="com.fxxkyiwangchangxue.yiwangnochangxue.DAO" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NotificationTest.testSelectAll">
+  <component name="RunManager" selected="Tomcat 服务器.Local Tomcat 10.1.13">
     <configuration name="AnnouncementTest.testSelectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YiWangNoChangXue" />
       <extension name="coverage">
@@ -335,7 +315,10 @@
       <workItem from="1700987614395" duration="1440000" />
       <workItem from="1701016772548" duration="2306000" />
       <workItem from="1701019104535" duration="828000" />
-      <workItem from="1701024044350" duration="6592000" />
+      <workItem from="1701024044350" duration="7685000" />
+      <workItem from="1701067064525" duration="7912000" />
+      <workItem from="1701078748009" duration="1029000" />
+      <workItem from="1701089978211" duration="8627000" />
     </task>
     <task id="LOCAL-00001" summary="项目基本">
       <option name="closed" value="true" />
@@ -385,7 +368,31 @@
       <option name="project" value="LOCAL" />
       <updated>1700988596343</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Notification，Announcement，StudyTask实体及其DAO层初步功能的封装">
+      <option name="closed" value="true" />
+      <created>1701031282825</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701031282825</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Notification，Announcement，StudyTask实体及其DAO层初步功能的封装">
+      <option name="closed" value="true" />
+      <created>1701031595483</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701031595483</updated>
+    </task>
+    <task id="LOCAL-00009" summary="GetNotification后端">
+      <option name="closed" value="true" />
+      <created>1701106206062</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701106206062</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,7 +413,9 @@
     <MESSAGE value="项目基本" />
     <MESSAGE value="User的DAO层封装" />
     <MESSAGE value="用户登录、注册" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户登录、注册" />
+    <MESSAGE value="Notification，Announcement，StudyTask实体及其DAO层初步功能的封装" />
+    <MESSAGE value="GetNotification后端" />
+    <option name="LAST_COMMIT_MESSAGE" value="GetNotification后端" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
