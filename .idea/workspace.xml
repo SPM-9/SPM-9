@@ -10,7 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="GetNotification后端">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/GetNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/GetNotification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/announcement/GetAnnouncementInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/studytask/GetStudyTaskFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/studytask/UploadStudyTaskFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822/storage_v2/_src_/schema/SPM-9.PCO3BA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c514197f-01e7-4a9d-9e69-d4d8f5bc1822/storage_v2/_src_/schema/SPM-9.PCO3BA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/StudyTaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/StudyTaskMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/StudyTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/StudyTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/GetNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/notification/GetNotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/StudyTaskMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/StudyTaskMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Servlet" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="Servlet" />
       </list>
     </option>
   </component>
@@ -319,6 +329,8 @@
       <workItem from="1701067064525" duration="7912000" />
       <workItem from="1701078748009" duration="1029000" />
       <workItem from="1701089978211" duration="8627000" />
+      <workItem from="1701136696707" duration="4733000" />
+      <workItem from="1701149586828" duration="8928000" />
     </task>
     <task id="LOCAL-00001" summary="项目基本">
       <option name="closed" value="true" />
@@ -416,6 +428,17 @@
     <MESSAGE value="Notification，Announcement，StudyTask实体及其DAO层初步功能的封装" />
     <MESSAGE value="GetNotification后端" />
     <option name="LAST_COMMIT_MESSAGE" value="GetNotification后端" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/studytask/GetStudyTaskFile.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

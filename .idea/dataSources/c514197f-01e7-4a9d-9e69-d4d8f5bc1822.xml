@@ -1043,8 +1043,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="294" parent="1" name="SPM-9">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-11-27.12:05:06</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-26.20:05:05</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-28.19:28:05</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-28.03:28:05</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="295" parent="1" name="root"/>
@@ -1092,7 +1092,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="306" parent="300" name="annId">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>4</AutoIncrement>
       <Comment>公告id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
@@ -1188,300 +1188,308 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DefaultExpression>&apos;（无正文）&apos;</DefaultExpression>
       <Position>6</Position>
     </column>
-    <column id="324" parent="301" name="file">
-      <Comment>提交带有的附件</Comment>
-      <DasType>mediumblob|0s</DasType>
+    <column id="324" parent="301" name="fileName">
+      <DasType>varchar(114)|0s</DasType>
       <Position>7</Position>
     </column>
-    <foreign-key id="325" parent="301" name="commitUserId">
+    <column id="325" parent="301" name="file">
+      <Comment>提交带有的附件</Comment>
+      <DasType>mediumblob|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="326" parent="301" name="commitUserId">
       <ColNames>fori_userId</ColNames>
       <RefColNames>uid</RefColNames>
       <RefTableName>User</RefTableName>
     </foreign-key>
-    <foreign-key id="326" parent="301" name="commitTaskId">
+    <foreign-key id="327" parent="301" name="commitTaskId">
       <ColNames>fori_taskId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>taskId</RefColNames>
       <RefTableName>StudyTask</RefTableName>
     </foreign-key>
-    <index id="327" parent="301" name="PRIMARY">
+    <index id="328" parent="301" name="PRIMARY">
       <ColNames>commitId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="328" parent="301" name="idResult_UNIQUE">
+    <index id="329" parent="301" name="idResult_UNIQUE">
       <ColNames>commitId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="329" parent="301" name="commitUserId_idx">
+    <index id="330" parent="301" name="commitUserId_idx">
       <ColNames>fori_userId</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="330" parent="301" name="commitTaskId">
+    <index id="331" parent="301" name="commitTaskId">
       <ColNames>fori_taskId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="331" parent="301" name="PRIMARY">
+    <key id="332" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="332" parent="301" name="idResult_UNIQUE">
+    <key id="333" parent="301" name="idResult_UNIQUE">
       <UnderlyingIndexName>idResult_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="333" parent="302" name="notifId">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="334" parent="302" name="notifId">
+      <AutoIncrement>7</AutoIncrement>
       <Comment>待办事项id</Comment>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="334" parent="302" name="fori_taskId">
+    <column id="335" parent="302" name="fori_taskId">
       <Comment>外键，待办事项所属的学习任务id</Comment>
       <DasType>int|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="335" parent="302" name="fori_annId">
+    <column id="336" parent="302" name="fori_annId">
       <Comment>外键，待办事项所属的公告id</Comment>
       <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="336" parent="302" name="notifType">
+    <column id="337" parent="302" name="notifType">
       <Comment>待办事项类型 公告0，作业1，考试2，预警3</Comment>
       <DasType>int|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="337" parent="302" name="notifTaskId">
+    <foreign-key id="338" parent="302" name="notifTaskId">
       <ColNames>fori_taskId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>taskId</RefColNames>
       <RefTableName>StudyTask</RefTableName>
     </foreign-key>
-    <foreign-key id="338" parent="302" name="annTaskId">
+    <foreign-key id="339" parent="302" name="annTaskId">
       <ColNames>fori_annId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>annId</RefColNames>
       <RefTableName>Announcement</RefTableName>
     </foreign-key>
-    <index id="339" parent="302" name="PRIMARY">
+    <index id="340" parent="302" name="PRIMARY">
       <ColNames>notifId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="340" parent="302" name="notif_id_UNIQUE">
+    <index id="341" parent="302" name="notif_id_UNIQUE">
       <ColNames>notifId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="341" parent="302" name="notifTaskId">
+    <index id="342" parent="302" name="notifTaskId">
       <ColNames>fori_taskId</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="342" parent="302" name="annTaskId_idx">
+    <index id="343" parent="302" name="annTaskId_idx">
       <ColNames>fori_annId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="343" parent="302" name="PRIMARY">
+    <key id="344" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="344" parent="302" name="notif_id_UNIQUE">
+    <key id="345" parent="302" name="notif_id_UNIQUE">
       <UnderlyingIndexName>notif_id_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="345" parent="303" name="taskId">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="346" parent="303" name="taskId">
+      <AutoIncrement>3</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="346" parent="303" name="fori_teacherId">
+    <column id="347" parent="303" name="fori_teacherId">
       <Comment>外键，发布老师的id</Comment>
       <DasType>int|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="347" parent="303" name="taskType">
+    <column id="348" parent="303" name="taskType">
       <Comment>学习任务种类</Comment>
       <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="348" parent="303" name="title">
+    <column id="349" parent="303" name="title">
       <Comment>学习任务标题</Comment>
       <DasType>varchar(45)|0s</DasType>
       <DefaultExpression>&apos;（无标题）&apos;</DefaultExpression>
       <Position>4</Position>
     </column>
-    <column id="349" parent="303" name="body">
+    <column id="350" parent="303" name="body">
       <Comment>学习任务正文</Comment>
       <DasType>varchar(1145)|0s</DasType>
       <DefaultExpression>&apos;（无正文）&apos;</DefaultExpression>
       <Position>5</Position>
     </column>
-    <column id="350" parent="303" name="file">
-      <Comment>学习任务附件</Comment>
-      <DasType>mediumblob|0s</DasType>
+    <column id="351" parent="303" name="fileName">
+      <DasType>varchar(114)|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="351" parent="303" name="startTime">
-      <Comment>学习任务发布时间</Comment>
-      <DasType>datetime|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="352" parent="303" name="file">
+      <Comment>学习任务附件</Comment>
+      <DasType>mediumblob|0s</DasType>
       <Position>7</Position>
     </column>
-    <column id="352" parent="303" name="endTime">
-      <Comment>学习任务截止时间</Comment>
+    <column id="353" parent="303" name="startTime">
+      <Comment>学习任务发布时间</Comment>
       <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <foreign-key id="353" parent="303" name="taskTeacherId">
+    <column id="354" parent="303" name="endTime">
+      <Comment>学习任务截止时间</Comment>
+      <DasType>datetime|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+    </column>
+    <foreign-key id="355" parent="303" name="taskTeacherId">
       <ColNames>fori_teacherId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>teacherId</RefColNames>
       <RefTableName>Teacher</RefTableName>
     </foreign-key>
-    <index id="354" parent="303" name="PRIMARY">
+    <index id="356" parent="303" name="PRIMARY">
       <ColNames>taskId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="355" parent="303" name="examId_UNIQUE">
+    <index id="357" parent="303" name="examId_UNIQUE">
       <ColNames>taskId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="356" parent="303" name="taskTeacherId">
+    <index id="358" parent="303" name="taskTeacherId">
       <ColNames>fori_teacherId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="357" parent="303" name="PRIMARY">
+    <key id="359" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="358" parent="303" name="examId_UNIQUE">
+    <key id="360" parent="303" name="examId_UNIQUE">
       <UnderlyingIndexName>examId_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="359" parent="304" name="teacherId">
-      <AutoIncrement>13</AutoIncrement>
+    <column id="361" parent="304" name="teacherId">
+      <AutoIncrement>14</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="360" parent="304" name="userName">
+    <column id="362" parent="304" name="userName">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="361" parent="304" name="password">
+    <column id="363" parent="304" name="password">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="362" parent="304" name="nickName">
+    <column id="364" parent="304" name="nickName">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="363" parent="304" name="email">
+    <column id="365" parent="304" name="email">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="364" parent="304" name="money">
+    <column id="366" parent="304" name="money">
       <DasType>int|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <Position>6</Position>
     </column>
-    <index id="365" parent="304" name="PRIMARY">
+    <index id="367" parent="304" name="PRIMARY">
       <ColNames>teacherId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="366" parent="304" name="uid_UNIQUE">
+    <index id="368" parent="304" name="uid_UNIQUE">
       <ColNames>teacherId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="367" parent="304" name="userName_UNIQUE">
+    <index id="369" parent="304" name="userName_UNIQUE">
       <ColNames>userName</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="368" parent="304" name="PRIMARY">
+    <key id="370" parent="304" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="369" parent="304" name="uid_UNIQUE">
+    <key id="371" parent="304" name="uid_UNIQUE">
       <UnderlyingIndexName>uid_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="370" parent="304" name="userName_UNIQUE">
+    <key id="372" parent="304" name="userName_UNIQUE">
       <UnderlyingIndexName>userName_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="371" parent="305" name="uid">
+    <column id="373" parent="305" name="uid">
       <AutoIncrement>13</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="372" parent="305" name="userName">
+    <column id="374" parent="305" name="userName">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="373" parent="305" name="password">
+    <column id="375" parent="305" name="password">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="374" parent="305" name="nickName">
+    <column id="376" parent="305" name="nickName">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="375" parent="305" name="email">
+    <column id="377" parent="305" name="email">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="376" parent="305" name="money">
+    <column id="378" parent="305" name="money">
       <DasType>int|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <Position>6</Position>
     </column>
-    <column id="377" parent="305" name="isChosenCourse">
+    <column id="379" parent="305" name="isChosenCourse">
       <DasType>tinyint|0s</DasType>
       <DefaultExpression>0</DefaultExpression>
       <Position>7</Position>
     </column>
-    <index id="378" parent="305" name="PRIMARY">
+    <index id="380" parent="305" name="PRIMARY">
       <ColNames>uid</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="379" parent="305" name="uid_UNIQUE">
+    <index id="381" parent="305" name="uid_UNIQUE">
       <ColNames>uid</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="380" parent="305" name="userName_UNIQUE">
+    <index id="382" parent="305" name="userName_UNIQUE">
       <ColNames>userName</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="381" parent="305" name="PRIMARY">
+    <key id="383" parent="305" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="382" parent="305" name="uid_UNIQUE">
+    <key id="384" parent="305" name="uid_UNIQUE">
       <UnderlyingIndexName>uid_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="383" parent="305" name="userName_UNIQUE">
+    <key id="385" parent="305" name="userName_UNIQUE">
       <UnderlyingIndexName>userName_UNIQUE</UnderlyingIndexName>
     </key>
   </database-model>

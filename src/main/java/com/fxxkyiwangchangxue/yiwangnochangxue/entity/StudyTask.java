@@ -10,20 +10,10 @@ public class StudyTask implements Serializable {
     private Integer taskType;
     private String title;
     private String body;
+    private String fileName;
     private byte[] file;
     private Date startTime;
     private Date endTime;
-
-    public StudyTask(Integer taskId, Integer fori_teacherId, Integer taskType, String title, String body, byte[] file, Date startTime, Date endTime) {
-        this.taskId = taskId;
-        this.fori_teacherId = fori_teacherId;
-        this.taskType = taskType;
-        this.title = title;
-        this.body = body;
-        this.file = file;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
 
     public StudyTask() {
     }
@@ -92,6 +82,14 @@ public class StudyTask implements Serializable {
         this.endTime = endTime;
     }
 
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
     @Override
     public String toString() {
         return "StudyTask{" +
@@ -100,6 +98,7 @@ public class StudyTask implements Serializable {
                 ", taskType=" + taskType +
                 ", title='" + title + '\'' +
                 ", body='" + body + '\'' +
+                ", fileName='" + fileName + '\'' +
                 ", file=" + Arrays.toString(file) +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
