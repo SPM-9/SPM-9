@@ -1,4 +1,4 @@
-package com.fxxkyiwangchangxue.yiwangnochangxue.service;
+package com.fxxkyiwangchangxue.yiwangnochangxue.service.notification;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -101,7 +101,7 @@ public class GetNotification extends HttpServlet {
             int fori_taskId = notification.getFori_taskId();
             StudyTask studyTask = studyTaskMapper.SelectById(fori_taskId);
             notification.setTitle("学习任务发布");
-            String body = "课程【项目管理与过程改进】发布公告 " + studyTask.getTitle() + "，请查收";
+            String body = "课程【项目管理与过程改进】发布学习任务 " + studyTask.getTitle() + "，请查收";
             notification.setBody(body);
             notification.setUploadTime(studyTask.getStartTime());
         } else if (notifType == Notification.ANNOUNCEMENT) {

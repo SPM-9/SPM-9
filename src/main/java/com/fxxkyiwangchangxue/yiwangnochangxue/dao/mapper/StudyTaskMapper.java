@@ -9,4 +9,6 @@ public interface StudyTaskMapper {
     List<StudyTask> SelectAll();
 
     StudyTask SelectById(int id);
+
+    StudyTask SelectFileById(int id);
 }

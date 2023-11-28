@@ -6,9 +6,17 @@
 <mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.StudyTaskMapper">
 
     <select id="SelectAll" resultType="StudyTask">
-        SELECT * FROM StudyTask;
+        SELECT taskId, fori_teacherId, taskType, title, body, startTime, endTime
+        FROM StudyTask;
     </select>
     <select id="SelectById" resultType="StudyTask">
-        SELECT * FROM StudyTask WHERE taskId = #{id};
+        SELECT taskId, fori_teacherId, taskType, title, body, startTime, endTime
+        FROM StudyTask
+        WHERE taskId = #{id};
+    </select>
+    <select id="SelectFileById" resultType="StudyTask">
+        SELECT fileName, file
+        FROM StudyTask
+        WHERE taskId = ${id};
     </select>
 </mapper>
