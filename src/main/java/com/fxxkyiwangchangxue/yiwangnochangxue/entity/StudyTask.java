@@ -12,8 +12,11 @@ public class StudyTask implements Serializable {
     private String body;
     private String fileName;
     private byte[] file;
+    private Long fileSize;
     private Date startTime;
     private Date endTime;
+    public static final int HOMEWORK = 0;
+    public static final int EXAM = 1;
 
     public StudyTask() {
     }
@@ -100,8 +103,16 @@ public class StudyTask implements Serializable {
                 ", body='" + body + '\'' +
                 ", fileName='" + fileName + '\'' +
                 ", file=" + Arrays.toString(file) +
+                ", fileSize=" + fileSize +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
                 '}';
+    }
+    public Long getFileSize() {
+        return fileSize;
+    }
+
+    public void setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
     }
 }
