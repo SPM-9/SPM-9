@@ -6,11 +6,11 @@
 <mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.StudyTaskMapper">
 
     <select id="SelectAll" resultType="StudyTask">
-        SELECT taskId, fori_teacherId, taskType, title, body, startTime, endTime
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
         FROM StudyTask;
     </select>
     <select id="SelectById" resultType="StudyTask">
-        SELECT taskId, fori_teacherId, taskType, title, body, startTime, endTime
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
         FROM StudyTask
         WHERE taskId = #{id};
     </select>
@@ -18,5 +18,10 @@
         SELECT fileName, file
         FROM StudyTask
         WHERE taskId = ${id};
+    </select>
+    <select id="SelectFileSizeById" resultType="java.lang.Long">
+        SELECT OCTET_LENGTH(file) DATASIZE
+        FROM StudyTask
+        WHERE taskId = #{id};
     </select>
 </mapper>

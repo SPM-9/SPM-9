@@ -11,4 +11,6 @@ public interface StudyTaskMapper {
     StudyTask SelectById(int id);
 
     StudyTask SelectFileById(int id);
+
+    Long SelectFileSizeById(int id);
 }
