@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.CommitMapper">
+    <insert id="InsertCommit">
+        INSERT INTO Commit (fori_userId, fori_taskId, body, fileName, file)
+        VALUES (#{fori_userId}, #{fori_taskId}, #{body}, #{fileName}, #{file});
+    </insert>
+
+    <select id="SelectAll" resultType="Commit">
+        SELECT commitId, fori_userId, fori_taskId, uploadTime, result, body
+        FROM Commit;
+    </select>
+    <select id="SelectById" resultType="Commit">
+        SELECT commitId, fori_userId, fori_taskId, uploadTime, result, body
+        FROM Commit
+        WHERE commitId = #{taskId};
+    </select>
+    <select id="SelectFileById" resultType="Commit">
+        SELECT fileName, file
+        FROM Commit
+        WHERE commitId = #{taskId};
+    </select>
+    <select id="SelectByTaskIdUId" resultType="Commit">
+        SELECT commitId, fori_userId, fori_taskId, uploadTime, result, body
+        FROM Commit
+        WHERE fori_userId = #{uid} and fori_taskId = #{taskId};
+    </select>
+
+</mapper>
