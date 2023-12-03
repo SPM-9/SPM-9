@@ -48,9 +48,6 @@ public class UserLogin extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        resp.setContentType("text/html; charset = UTF-8");
-        PrintWriter pw = resp.getWriter();
-
         doPost(req, resp);
     }
 
