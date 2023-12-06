@@ -4,6 +4,10 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.StudyTaskMapper">
+    <insert id="insertStudyTask" useGeneratedKeys="true" keyProperty="taskId">
+        INSERT INTO StudyTask (fori_teacherId, taskType, title, body, fileName, file, startTime, endTime)
+        VALUES (#{fori_teacherId}, #{taskType}, #{title}, #{body}, #{fileName}, #{file}, #{startTime}, #{endTime});
+    </insert>
 
     <select id="SelectAll" resultType="StudyTask">
         SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
