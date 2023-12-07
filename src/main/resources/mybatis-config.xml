@@ -14,7 +14,7 @@
             <dataSource type="POOLED">
                 <!-- 连接信息 -->
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://1.15.179.230:3306/SPM-9?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=Asia/Shanghai&amp;autoReconnect=true"/>
+                <property name="url" value="jdbc:mysql://121.41.1.13:3306/SPM-9?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=Asia/Shanghai&amp;autoReconnect=true"/>
                 <property name="username" value="root"/>
                 <property name="password" value="114514"/>
             </dataSource>
