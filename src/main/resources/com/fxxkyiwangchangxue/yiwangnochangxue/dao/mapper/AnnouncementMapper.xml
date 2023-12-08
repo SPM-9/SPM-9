@@ -4,6 +4,10 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.AnnouncementMapper">
+    <insert id="insertAnnouncement" useGeneratedKeys="true" keyProperty="annId">
+        INSERT INTO `SPM-9`.Announcement (fori_teacherId, annType, title, body, uploadTime)
+        VALUES (#{fori_teacherId}, #{annType}, #{title}, #{body}, #{uploadTime});
+    </insert>
 
     <select id="SelectAll" resultType="Announcement">
         SELECT * FROM Announcement;

@@ -9,4 +9,5 @@ public interface AnnouncementMapper {
 
     Announcement SelectById(int id);
 
+    void insertAnnouncement(Announcement announcement);
 }

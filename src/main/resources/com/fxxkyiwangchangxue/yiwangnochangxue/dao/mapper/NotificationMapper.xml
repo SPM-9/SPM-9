@@ -8,6 +8,10 @@
         INSERT INTO Notification (fori_taskId, notifType)
         VALUES (#{taskId}, 0);
     </insert>
+    <insert id="insertAnnouncementNotif">
+        INSERT INTO `SPM-9`.Notification (fori_annId, notifType)
+        VALUES (#{annId}, 1);
+    </insert>
 
     <select id="selectAll" resultType="Notification">
         SELECT * FROM Notification;
