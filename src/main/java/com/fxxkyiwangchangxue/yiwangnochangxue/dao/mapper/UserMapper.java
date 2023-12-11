@@ -40,4 +40,6 @@ public interface UserMapper {
      * @param user 用户对象，用户名、密码、邮箱和昵称不能为空
      */
     void insertByRegister(User user);
+
+    void updateByUid(@Param("uid")int uid,@Param("isaccept")boolean isaccept);
 }

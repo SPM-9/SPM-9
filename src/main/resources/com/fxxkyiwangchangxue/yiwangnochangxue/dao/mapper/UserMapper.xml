@@ -46,4 +46,10 @@
     <select id="selectByUserName" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.User">
         SELECT * FROM User WHERE userName = #{userName};
     </select>
+
+    <update id="updateByUid" >
+        UPDATE User
+        SET isChosenCourse = #{isaccept}
+        WHERE uid = #{uid}
+    </update>
 </mapper>

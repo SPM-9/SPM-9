@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.SelectCourseRequestMapper">
+
+    <select id="SelectByUId" resultType="SelectCourseRequest">
+        SELECT * FROM SelectCourseRequest WHERE fori_userId = #{uid};
+    </select>
+
+    <insert id="InsertByUID" useGeneratedKeys="true" >
+        INSERT INTO SelectCourseRequest (fori_userId)
+        VALUES (#{uid});
+    </insert>
+
+    <update id="updateByTeacherId" >
+        UPDATE SelectCourseRequest
+        SET fori_teacherId = #{id},isAccept = #{accept}
+        WHERE fori_userId = #{uid}
+    </update>
+
+</mapper>
