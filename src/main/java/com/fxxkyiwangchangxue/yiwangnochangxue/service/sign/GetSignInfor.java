@@ -81,17 +81,20 @@ public class GetSignInfor extends HttpServlet {
                 String signUId = getSignById(userSign.getSignId());
                 if(judgeStatus(signUId,userSign.getStudentId())){
                     isOvertime = "alreadySign";
+                    pw.write(gson.toJson(isOvertime));
+
                 }else {
                     isOvertime = "ontime";
+                    //向数据库中更新数据
+                    if(signUpdate(userSign)){
+                        pw.write(gson.toJson(isOvertime));
+                        System.out.println("GetSignInfor查询结果：ontime/alreadySign");
+                        response.setStatus(222);
+                    }else {
+                        System.out.println("更新错误");
+                    }
                 }
-                //向数据库中更新数据
-                if(signUpdate(userSign)){
-                    pw.write(gson.toJson(isOvertime));
-                    System.out.println("GetSignInfor查询结果：ontime/alreadySign");
-                    response.setStatus(222);
-                }else {
-                    System.out.println("更新错误");
-                }
+
             }
         }
     }
