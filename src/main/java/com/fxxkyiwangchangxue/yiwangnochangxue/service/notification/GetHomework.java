@@ -1,9 +1,7 @@
 package com.fxxkyiwangchangxue.yiwangnochangxue.service.notification;
 
 import com.fxxkyiwangchangxue.yiwangnochangxue.dao.SqlSessionFactoryUtils;
-import com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.HomeworkMapper;
 import com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.StudyTaskMapper;
-import com.fxxkyiwangchangxue.yiwangnochangxue.entity.Homework;
 import com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -21,8 +19,6 @@ import java.util.List;
 
 @WebServlet(name = "GetHomework", value = "/GetHomework")
 public class GetHomework extends HttpServlet {
-    HomeworkMapper homeworkMapper;
-    StudyTaskMapper studyTaskMapper;
 
     @Override
     public void init() {
@@ -39,9 +35,7 @@ public class GetHomework extends HttpServlet {
         if (operation == null)
             return;
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
-
-        homeworkMapper = sqlSession.getMapper(HomeworkMapper.class);
-        studyTaskMapper = sqlSession.getMapper(StudyTaskMapper.class);
+        StudyTaskMapper studyTaskMapper = sqlSession.getMapper(StudyTaskMapper.class);
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
         if (operation.equals("getLast")) {
@@ -50,18 +44,17 @@ public class GetHomework extends HttpServlet {
             int lastIndex = 0;
             int refreshCount = Integer.parseInt(refreshCnt);
 
-            List<Homework> homeworks = new ArrayList<>(refreshCount + 5);
+            List<StudyTask> homeworks = new ArrayList<>(refreshCount + 5);
             for (int i = 0; i < refreshCount; i++) {
-                Homework homework;
+                StudyTask studyTaskHomework;
                 if (i == 0)
-                    homework = homeworkMapper.selectLastIndex();
+                    studyTaskHomework = studyTaskMapper.selectLatestHomework();
                 else
-                    homework = homeworkMapper.selectPreviousIndex(lastIndex);
-                if (homework == null)// 如果返回null，则说明没有更多了
+                    studyTaskHomework = studyTaskMapper.selectPreviousHomework(lastIndex);
+                if (studyTaskHomework == null)// 如果返回null，则说明没有更多了
                     break;
-                homework = getHomeworkInfo(homework);
-                homeworks.add(homework);
-                lastIndex = homework.getHomeworkId();
+                homeworks.add(studyTaskHomework);
+                lastIndex = studyTaskHomework.getTaskId();
             }
             String json = gson.toJson(homeworks);// gson转换时会自动忽略null值
             pw.print(json);
@@ -71,35 +64,24 @@ public class GetHomework extends HttpServlet {
             int lastIndex = Integer.parseInt(lastIdx);
             int refreshCount = Integer.parseInt(refreshCnt);
 
-            List<Homework> homeworks =new ArrayList<>(refreshCount+5);
-            for(int i=0;i<refreshCount;i++){
-                Homework homework=homeworkMapper.selectPreviousIndex(lastIndex);
-                if(homework == null) // 如果返回null，则说明没有更多了
+            List<StudyTask> homeworks = new ArrayList<>(refreshCount+5);
+            for(int i = 0; i < refreshCount; i++){
+                StudyTask studyTaskHomework = studyTaskMapper.selectPreviousHomework(lastIndex);
+                if(studyTaskHomework == null) // 如果返回null，则说明没有更多了
                     break;
-                homework=getHomeworkInfo(homework);
-                homeworks.add(homework);
-                lastIndex=homework.getHomeworkId();
+                homeworks.add(studyTaskHomework);
+                lastIndex = studyTaskHomework.getTaskId();
             }
 
             String json = gson.toJson(homeworks); // gson转换时会自动忽略null值
             pw.print(json);
         } else if (operation.equals("getAll")) {
-            List<Homework> homeworks = homeworkMapper.selectAll();
-            String json = gson.toJson(homeworks);
-            pw.print(json);
+//            List<Homework> homeworks = homeworkMapper.selectAll();
+//            String json = gson.toJson(homeworks);
+//            pw.print(json);
         }
         sqlSession.close();
 
-    }
-
-    private Homework getHomeworkInfo(Homework homework) {
-        int homeworkId = homework.getHomeworkId();
-        StudyTask studyTask = studyTaskMapper.SelectById(homeworkId);
-        homework.setTitle("学习任务发布");
-        String body = "课程【项目管理与过程改进】发布学习任务 " + studyTask.getTitle() + "，请查收";
-        homework.setBody(body);
-        homework.setUploadTime(studyTask.getStartTime());
-        return homework;
     }
 
     @Override

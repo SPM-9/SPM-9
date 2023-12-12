@@ -16,4 +16,12 @@ public interface StudyTaskMapper {
     Long SelectFileSizeById(int id);
 
     void insertStudyTask(StudyTask studyTask);
+
+    StudyTask selectLatestHomework();
+
+    StudyTask selectLatestExam();
+
+    StudyTask selectPreviousHomework(@Param("thisIndex") int index);
+
+    StudyTask selectPreviousExam(@Param("thisIndex") int index);
 }

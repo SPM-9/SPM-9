@@ -28,4 +28,28 @@
         FROM StudyTask
         WHERE taskId = #{id};
     </select>
+    <select id="selectLatestHomework" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE taskType = 0);
+    </select>
+    <select id="selectLatestExam" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE taskType = 1);
+    </select>
+    <select id="selectPreviousHomework" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        <![CDATA[
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE (taskType = 0) and taskId < #{thisIndex} LIMIT 1);
+        ]]>
+    </select>
+    <select id="selectPreviousExam" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        <![CDATA[
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE (taskType = 1) and taskId < #{thisIndex} LIMIT 1);
+        ]]>
+    </select>
 </mapper>
