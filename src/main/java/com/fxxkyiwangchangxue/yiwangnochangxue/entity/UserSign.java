@@ -1,9 +1,10 @@
 package com.fxxkyiwangchangxue.yiwangnochangxue.entity;
 
 import javax.xml.stream.Location;
+import java.io.Serializable;
 import java.util.Date;
 
-public class UserSign {
+public class UserSign implements Serializable {
     private Integer signId;
     private Integer studentId;
     private Date signTime;
@@ -68,8 +69,14 @@ public class UserSign {
         this.signLocation = signLocation;
     }
 
+    @Override
     public String toString() {
-        return "SignEntity{studentId = " + studentId + ", signTime = " + signTime + ", signLocation = " + signLocation + "}";
+        return "UserSign{" +
+                "signId=" + signId +
+                ", studentId=" + studentId +
+                ", signTime=" + signTime +
+                ", signLocation=" + signLocation +
+                '}';
     }
 
     /**

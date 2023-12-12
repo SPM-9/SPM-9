@@ -33,25 +33,14 @@ public class GetSignInfor extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("GetSignInfor收到了post请求22");
-        System.out.println("收到1");
-
         response.setContentType("text/html; charset = UTF-8");
-        System.out.println("收到2");
-
         PrintWriter pw = response.getWriter();
-        System.out.println("收到3");
-
-        String userSignJson = request.getParameter("userSign");
-        System.out.println("收到的userSignJson"+userSignJson);
-
-        UserSign userSign = gson.fromJson(userSignJson, UserSign.class);
         //userSign = new UserSign(null, 1, new Date(), null);
-        System.out.println("收到的userSign"+userSign);
-        System.out.println("GetSignInfor开始判断请求类型");
         //判断请求类型
         String action = request.getParameter("action");
         if(action!=null&&action.equals("getSign")){
+            String userSignJson = request.getParameter("userSign");
+            UserSign userSign = gson.fromJson(userSignJson, UserSign.class);
             //获取当前时间存在的签到
             List<UserSigns> currentSignsList = obtainCurrentSign();
             System.out.println("currentSignsList"+currentSignsList);
@@ -68,6 +57,8 @@ public class GetSignInfor extends HttpServlet {
             System.out.println("当前时间："+new Date());
             System.out.println("GetSignInfor获取完当前时间存在的签到");
         }else if(action!=null&&action.equals("submitSign")){
+            String userSignJson = request.getParameter("userSign");
+            UserSign userSign = gson.fromJson(userSignJson, UserSign.class);
             System.out.println("GetSignInfor开始查询数据库是否超过签到时间");
             String isOvertime;
             //查询数据库是否超过签到时间
@@ -78,21 +69,29 @@ public class GetSignInfor extends HttpServlet {
                 System.out.println("GetSignInfor查询结果：overtime");
                 response.setStatus(444);
             }else{
-                String signUId = getSignById(userSign.getSignId());
-                if(judgeStatus(signUId,userSign.getStudentId())){
+                String sign = getSignById(userSign.getSignId());
+                if(judgeStatus(sign,userSign.getStudentId())){
                     isOvertime = "alreadySign";
                     pw.write(gson.toJson(isOvertime));
 
                 }else {
-                    isOvertime = "ontime";
-                    //向数据库中更新数据
-                    if(signUpdate(userSign)){
+                    String signUId = getSignById(userSign.getSignId());
+                    if(judgeStatus(signUId,userSign.getStudentId())){
+                        isOvertime = "alreadySign";
                         pw.write(gson.toJson(isOvertime));
-                        System.out.println("GetSignInfor查询结果：ontime/alreadySign");
-                        response.setStatus(222);
+
                     }else {
-                        System.out.println("更新错误");
+                        isOvertime = "ontime";
+                        //向数据库中更新数据
+                        if(signUpdate(userSign)){
+                            pw.write(gson.toJson(isOvertime));
+                            System.out.println("GetSignInfor查询结果：ontime/alreadySign");
+                            response.setStatus(222);
+                        }else {
+                            System.out.println("更新错误");
+                        }
                     }
+
                 }
 
             }
@@ -113,7 +112,7 @@ public class GetSignInfor extends HttpServlet {
     private boolean signUpdate(UserSign userSign) {
 
         SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
-        SqlSession sqlSession = sqlSessionFactory.openSession();
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
         UserSignMapper userSignMapper = sqlSession.getMapper(UserSignMapper.class);
         UserSigns userSigns = userSignMapper.selectById(userSign.getSignId());
 
@@ -148,7 +147,7 @@ public class GetSignInfor extends HttpServlet {
     }
 
     public boolean judgeStatus(String signUId, Integer studentId){
-        if (signUId!=null&&!signUId.equals("null")){
+        if (signUId!=null&&!signUId.equals("null")&&!signUId.isEmpty()){
             Type type = new TypeToken<List<UserSign>>(){}.getType();
             List<UserSign> userSignList = gson.fromJson(signUId, type);
             System.out.println("judgeStatus:userSignList:"+userSignList);
@@ -173,7 +172,7 @@ public class GetSignInfor extends HttpServlet {
             //查询用户是否签到过
             for (UserSigns userSigns : currentSignsList) {
                 String signUId = userSigns.getSignUId();
-                if(signUId==null){
+                if(signUId==null||signUId.isEmpty()){
                     appSignList.add(userSigns);
                 }else {
                     if (!judgeStatus(signUId,studentId)){
@@ -204,9 +203,9 @@ public class GetSignInfor extends HttpServlet {
                 }
                 userSignList.add(userSign);
 
-                //更新数据库
-                String json = gson.toJson(userSignList);
-                userSignMapper.updateSignUId(userSign.getSignId(), json);
+//                //更新数据库
+//                String json = gson.toJson(userSignList);
+//                userSignMapper.updateSignUId(userSign.getSignId(), json);
                 sqlSession.close();
                 return false;
             }

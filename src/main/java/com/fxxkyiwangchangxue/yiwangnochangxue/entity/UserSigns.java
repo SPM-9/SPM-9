@@ -3,9 +3,10 @@ package com.fxxkyiwangchangxue.yiwangnochangxue.entity;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class UserSigns {
+public class UserSigns implements Serializable {
     private Integer signId;
     private Integer teacherId;
     private String signUId;
