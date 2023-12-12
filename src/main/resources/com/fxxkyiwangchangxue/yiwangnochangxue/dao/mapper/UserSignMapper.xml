@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    namespace: 命名空间
+-->
+
+
+<mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.UserSignMapper">
+    <resultMap id="UserSignsMap" type="UserSigns">
+        <result column="signId" property="signId" jdbcType="INTEGER"/>
+        <result column="fori_teacherId" property="teacherId" jdbcType="INTEGER"/>
+        <result column="signUId" property="signUId" jdbcType="VARCHAR"/>
+        <result column="startTime" property="startTime" jdbcType="DATE"/>
+        <result column="endTime" property="endTime" jdbcType="DATE"/>
+    </resultMap>
+
+    <update id="updateSignUId">
+        update `SPM-9`.Sign
+        <set>
+            signUId = #{signUId}
+        </set>
+        <where>
+            signId=#{id}
+        </where>;
+    </update>
+    <select id="selectAllByTime" resultMap="UserSignsMap">
+        select *
+        from `SPM-9`.Sign
+#         maybeWrong
+        where endTime > #{now};
+    </select>
+
+    <select id="selectById" resultMap="UserSignsMap">
+        select *
+        from `SPM-9`.Sign
+        where signId=#{id};
+    </select>
+    <select id="selectAll" resultMap="UserSignsMap">
+        select *
+        from `SPM-9`.Sign;
+    </select>
+</mapper>

@@ -1,4 +1,4 @@
-package com.fxxkyiwangchangxue.yiwangnochangxue;
+package com.fxxkyiwangchangxue.yiwangnochangxue.service.sign;
 
 import java.io.*;
 
@@ -14,6 +14,8 @@ public class HelloServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        System.out.println("hello-servlet收到了请求");
         response.setContentType("text/html");
 
         // Hello
