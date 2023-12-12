@@ -14,4 +14,6 @@ public interface NotificationMapper {
     Notification selectPreviousIndex(int thisIndex);
 
     void insertStudyTaskNotif(@Param("taskId") int taskId);
+
+    void insertAnnouncementNotif(@Param("annId") int annId);
 }
