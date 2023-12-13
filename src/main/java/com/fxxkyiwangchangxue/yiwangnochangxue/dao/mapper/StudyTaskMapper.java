@@ -24,4 +24,6 @@ public interface StudyTaskMapper {
     StudyTask selectPreviousHomework(@Param("thisIndex") int index);
 
     StudyTask selectPreviousExam(@Param("thisIndex") int index);
+
+    List<StudyTask> selectTodoStudyTask(@Param("userId") int userId);
 }

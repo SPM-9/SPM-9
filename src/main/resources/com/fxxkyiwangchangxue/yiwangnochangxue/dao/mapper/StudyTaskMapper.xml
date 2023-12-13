@@ -52,4 +52,11 @@
         WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE (taskType = 1) and taskId < #{thisIndex} LIMIT 1);
         ]]>
     </select>
+    <select id="selectTodoStudyTask" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE NOW() BETWEEN startTime and endTime and
+              taskId not in (SELECT fori_taskId FROM `SPM-9`.Commit WHERE fori_userId = #{userId})
+        ORDER BY endTime;
+    </select>
 </mapper>
