@@ -16,6 +16,10 @@
         <result column="startTime" property="startTime" jdbcType="DATE"/>
         <result column="endTime" property="endTime" jdbcType="DATE"/>
     </resultMap>
+    <insert id="insertNewSign" useGeneratedKeys="true" keyProperty="signId">
+        insert into `SPM-9`.Sign
+        values (null,#{teacherId},null,#{startTime},#{endTime});
+    </insert>
 
     <update id="updateSignUId">
         update `SPM-9`.Sign
