@@ -40,13 +40,19 @@ public class DownloadResource extends HttpServlet {
         PrintWriter pw = resp.getWriter();
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
         ResourceMapper resourceMapper=sqlSession.getMapper(ResourceMapper.class);
-        List<Resource> resource = resourceMapper.getResource();
-        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
-        sqlSession.close();
+        List<Resource> resource;
+        try (sqlSession) {
+            resource = resourceMapper.getResource();
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            return;
+        }
+
+        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
         String json = gson.toJson(resource);
         pw.print(json);
-
     }
 
     @Override

@@ -38,49 +38,54 @@ public class GetHomework extends HttpServlet {
         StudyTaskMapper studyTaskMapper = sqlSession.getMapper(StudyTaskMapper.class);
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
-        if (operation.equals("getLast")) {
-            if (refreshCnt == null)
-                return;
-            int lastIndex = 0;
-            int refreshCount = Integer.parseInt(refreshCnt);
+        try (sqlSession) {
+            if (operation.equals("getLast")) {
+                if (refreshCnt == null)
+                    return;
+                int lastIndex = 0;
+                int refreshCount = Integer.parseInt(refreshCnt);
 
-            List<StudyTask> homeworks = new ArrayList<>(refreshCount + 5);
-            for (int i = 0; i < refreshCount; i++) {
-                StudyTask studyTaskHomework;
-                if (i == 0)
-                    studyTaskHomework = studyTaskMapper.selectLatestHomework();
-                else
-                    studyTaskHomework = studyTaskMapper.selectPreviousHomework(lastIndex);
-                if (studyTaskHomework == null)// 如果返回null，则说明没有更多了
-                    break;
-                homeworks.add(studyTaskHomework);
-                lastIndex = studyTaskHomework.getTaskId();
-            }
-            String json = gson.toJson(homeworks);// gson转换时会自动忽略null值
-            pw.print(json);
-        } else if (operation.equals("getPrevious")) {
-            if (lastIdx == null || refreshCnt == null)
-                return;
-            int lastIndex = Integer.parseInt(lastIdx);
-            int refreshCount = Integer.parseInt(refreshCnt);
+                List<StudyTask> homeworks = new ArrayList<>(refreshCount + 5);
+                for (int i = 0; i < refreshCount; i++) {
+                    StudyTask studyTaskHomework;
+                    if (i == 0)
+                        studyTaskHomework = studyTaskMapper.selectLatestHomework();
+                    else
+                        studyTaskHomework = studyTaskMapper.selectPreviousHomework(lastIndex);
+                    if (studyTaskHomework == null)// 如果返回null，则说明没有更多了
+                        break;
+                    homeworks.add(studyTaskHomework);
+                    lastIndex = studyTaskHomework.getTaskId();
+                }
+                String json = gson.toJson(homeworks);// gson转换时会自动忽略null值
+                pw.print(json);
+            } else if (operation.equals("getPrevious")) {
+                if (lastIdx == null || refreshCnt == null)
+                    return;
+                int lastIndex = Integer.parseInt(lastIdx);
+                int refreshCount = Integer.parseInt(refreshCnt);
 
-            List<StudyTask> homeworks = new ArrayList<>(refreshCount+5);
-            for(int i = 0; i < refreshCount; i++){
-                StudyTask studyTaskHomework = studyTaskMapper.selectPreviousHomework(lastIndex);
-                if(studyTaskHomework == null) // 如果返回null，则说明没有更多了
-                    break;
-                homeworks.add(studyTaskHomework);
-                lastIndex = studyTaskHomework.getTaskId();
-            }
+                List<StudyTask> homeworks = new ArrayList<>(refreshCount+5);
+                for(int i = 0; i < refreshCount; i++){
+                    StudyTask studyTaskHomework = studyTaskMapper.selectPreviousHomework(lastIndex);
+                    if(studyTaskHomework == null) // 如果返回null，则说明没有更多了
+                        break;
+                    homeworks.add(studyTaskHomework);
+                    lastIndex = studyTaskHomework.getTaskId();
+                }
 
-            String json = gson.toJson(homeworks); // gson转换时会自动忽略null值
-            pw.print(json);
-        } else if (operation.equals("getAll")) {
+                String json = gson.toJson(homeworks); // gson转换时会自动忽略null值
+                pw.print(json);
+            } else if (operation.equals("getAll")) {
 //            List<Homework> homeworks = homeworkMapper.selectAll();
 //            String json = gson.toJson(homeworks);
 //            pw.print(json);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            return;
         }
-        sqlSession.close();
 
     }
 

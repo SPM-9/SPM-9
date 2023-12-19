@@ -24,14 +24,19 @@ public class SelectRequest extends HttpServlet {
         int uid = Integer.parseInt(uidString);
 
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
-
         SelectCourseRequestMapper courseRequestMapper= sqlSession.getMapper(SelectCourseRequestMapper.class);
-        courseRequestMapper.InsertByUID(uid);
-        sqlSession.commit();
-        sqlSession.close();
+
+        try (sqlSession) {
+            courseRequestMapper.InsertByUID(uid);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            sqlSession.rollback();
+            resp.setStatus(500);
+            return;
+        }
 
         resp.setStatus(200);
-
     }
 
 

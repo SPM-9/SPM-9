@@ -27,11 +27,17 @@ public class modifychooseclass extends HttpServlet {
         boolean accept = Boolean.parseBoolean(isAccept);
 
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
-
         UserMapper userMapper= sqlSession.getMapper(UserMapper.class);
-        userMapper.updateByUid(uid,accept);
-        sqlSession.commit();
-        sqlSession.close();
+
+        try (sqlSession) {
+            userMapper.updateByUid(uid,accept);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            sqlSession.rollback();
+            resp.setStatus(500);
+            return;
+        }
         if(accept){
             resp.setStatus(200);
         }else {

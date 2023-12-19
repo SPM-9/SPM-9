@@ -36,17 +36,22 @@ public class UserRegister extends HttpServlet {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-        // 先检查用户是否存在
-        User user = userMapper.selectByUserName(userName);
-        if (user != null) {
-            pw.print("false");
-        } else {
-            user = new User(userName, password, userNickName, userEmail);
-            userMapper.insertByRegister(user);
-            sqlSession.commit();
-            int id = user.getUid();
+        try (sqlSession) {
+            // 先检查用户是否存在
+            User user = userMapper.selectByUserName(userName);
+            if (user != null) {
+                pw.print("false");
+            } else {
+                user = new User(userName, password, userNickName, userEmail);
+                userMapper.insertByRegister(user);
+                sqlSession.commit();
+                int id = user.getUid();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            return;
         }
-        sqlSession.close();
     }
 
     @Override

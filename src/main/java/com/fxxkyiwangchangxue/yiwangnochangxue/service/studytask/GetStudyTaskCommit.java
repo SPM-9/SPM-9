@@ -41,12 +41,9 @@ public class GetStudyTaskCommit extends HttpServlet {
             res = commitMapper.selectByStudyTaskId(studyTaskId);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-
-        if (res == null) {
-            resp.setStatus(500);
             return;
         }
+
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
         String json = gson.toJson(res);// gson转换时会自动忽略null值
         pw.print(json);

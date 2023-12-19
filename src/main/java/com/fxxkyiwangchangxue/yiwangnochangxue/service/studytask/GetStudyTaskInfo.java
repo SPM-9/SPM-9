@@ -33,13 +33,20 @@ public class GetStudyTaskInfo extends HttpServlet {
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
         StudyTaskMapper studyTaskMapper = sqlSession.getMapper(StudyTaskMapper.class);
 
-        StudyTask task = studyTaskMapper.SelectById(taskId);
-        Long fileSize = studyTaskMapper.SelectFileSizeById(taskId);
-        if (task == null) {
-            resp.setStatus(404);
+        StudyTask task;
+        try (sqlSession) {
+            task = studyTaskMapper.SelectById(taskId);
+            Long fileSize = studyTaskMapper.SelectFileSizeById(taskId);
+            if (task == null) {
+                resp.setStatus(404);
+                return;
+            }
+            task.setFileSize(fileSize);
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
             return;
         }
-        task.setFileSize(fileSize);
 
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
         String json = gson.toJson(task, StudyTask.class);

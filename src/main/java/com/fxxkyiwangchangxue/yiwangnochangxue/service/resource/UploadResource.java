@@ -39,7 +39,13 @@ public class UploadResource extends HttpServlet {
         InputStream is = filePart.getInputStream();
         BufferedInputStream bis = new BufferedInputStream(is);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        IOUtils.copy(bis, baos);
+        try (bis ; baos){
+            IOUtils.copy(bis, baos);
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            return;
+        }
         byte[] file = baos.toByteArray();
 
         Resource resource = new Resource();
@@ -50,9 +56,16 @@ public class UploadResource extends HttpServlet {
 
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
         ResourceMapper resourceMapper = sqlSession.getMapper(ResourceMapper.class);
-        resourceMapper.insertResource(resource);
-        sqlSession.commit();
-        sqlSession.close();
+
+        try (sqlSession) {
+            resourceMapper.insertResource(resource);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            sqlSession.rollback();
+            resp.setStatus(500);
+            return;
+        }
     }
 
     @Override
