@@ -43,6 +43,10 @@ public class GetSignInfor extends HttpServlet {
             UserSign userSign = gson.fromJson(userSignJson, UserSign.class);
             //获取当前时间存在的签到
             List<UserSigns> currentSignsList = obtainCurrentSign();
+            if (currentSignsList == null) {
+                response.setStatus(500);
+                return;
+            }
             System.out.println("currentSignsList"+currentSignsList);
             System.out.println("userSign.getStudentId():"+userSign.getStudentId());
 
@@ -70,12 +74,20 @@ public class GetSignInfor extends HttpServlet {
                 response.setStatus(444);
             }else{
                 String sign = getSignById(userSign.getSignId());
+                if (sign == null) {
+                    response.setStatus(500);
+                    return;
+                }
                 if(judgeStatus(sign,userSign.getStudentId())){
                     isOvertime = "alreadySign";
                     pw.write(gson.toJson(isOvertime));
 
                 }else {
                     String signUId = getSignById(userSign.getSignId());
+                    if (signUId == null) {
+                        response.setStatus(500);
+                        return;
+                    }
                     if(judgeStatus(signUId,userSign.getStudentId())){
                         isOvertime = "alreadySign";
                         pw.write(gson.toJson(isOvertime));
@@ -102,11 +114,15 @@ public class GetSignInfor extends HttpServlet {
         SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserSignMapper userSignMapper = sqlSession.getMapper(UserSignMapper.class);
-        UserSigns userSigns = userSignMapper.selectById(signId);
-        String signUIdJson = userSigns.getSignUId();
-        sqlSession.close();
 
-        return signUIdJson;
+        UserSigns userSigns = null;
+        try (sqlSession) {
+            userSigns = userSignMapper.selectById(signId);
+            return userSigns.getSignUId();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     private boolean signUpdate(UserSign userSign) {
@@ -114,24 +130,30 @@ public class GetSignInfor extends HttpServlet {
         SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
         SqlSession sqlSession = sqlSessionFactory.openSession(true);
         UserSignMapper userSignMapper = sqlSession.getMapper(UserSignMapper.class);
-        UserSigns userSigns = userSignMapper.selectById(userSign.getSignId());
 
-        //获取数据库已签到列表
-        String signUId = userSigns.getSignUId();
-        Type type = new TypeToken<List<UserSign>>() {
-        }.getType();
-        List<UserSign> oldSignUId = gson.fromJson(signUId, type);
+        try (sqlSession) {
+            UserSigns userSigns = userSignMapper.selectById(userSign.getSignId());
 
-        if (oldSignUId==null){
-            oldSignUId = new ArrayList<UserSign>();
+            //获取数据库已签到列表
+            String signUId = userSigns.getSignUId();
+            Type type = new TypeToken<List<UserSign>>() {
+            }.getType();
+            List<UserSign> oldSignUId = gson.fromJson(signUId, type);
+
+            if (oldSignUId==null){
+                oldSignUId = new ArrayList<UserSign>();
+            }
+            //向签到列表增加
+            oldSignUId.add(userSign);
+            //更新数据库
+            String newSignUId = gson.toJson(oldSignUId);
+            userSignMapper.updateSignUId(userSign.getSignId(),newSignUId);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            sqlSession.rollback();
+            return false;
         }
-        //向签到列表增加
-        oldSignUId.add(userSign);
-        //更新数据库
-        String newSignUId = gson.toJson(oldSignUId);
-        userSignMapper.updateSignUId(userSign.getSignId(),newSignUId);
-        sqlSession.close();
-        return true;
     }
 
     public List<UserSigns> obtainCurrentSign(){
@@ -140,10 +162,14 @@ public class GetSignInfor extends HttpServlet {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserSignMapper userSignMapper = sqlSession.getMapper(UserSignMapper.class);
 
-        Date now = new Date();
-        List<UserSigns> userSigns = userSignMapper.selectAllByTime(now);
-        sqlSession.close();
-        return userSigns;
+        try (sqlSession) {
+            Date now = new Date();
+            return userSignMapper.selectAllByTime(now);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
 
     public boolean judgeStatus(String signUId, Integer studentId){
@@ -183,35 +209,40 @@ public class GetSignInfor extends HttpServlet {
         }
         return appSignList;
     }
-    public boolean isOvertime(UserSign userSign){
+    public boolean isOvertime(UserSign userSign) throws IOException {
         //配置mybatis
         SqlSessionFactory sqlSessionFactory = SqlSessionFactoryUtils.getSqlSessionFactory();
         SqlSession sqlSession = sqlSessionFactory.openSession(true);
         UserSignMapper userSignMapper = sqlSession.getMapper(UserSignMapper.class);
 
-        //查询该签到的信息
-        UserSigns userSigns = userSignMapper.selectById(userSign.getSignId());
-        if (userSigns != null){
-            if (userSigns.getEndTime().after(userSign.getSignTime())){//未超时
-                //update数据库
-                //去除signUId，增加signEntity
-                String signUId = userSigns.getSignUId();
-                Type type = new TypeToken<List<UserSign>>(){}.getType();
-                List<UserSign> userSignList = gson.fromJson(signUId, type);
-                if (userSignList == null){
-                    userSignList = new ArrayList<>();
-                }
-                userSignList.add(userSign);
+        try (sqlSession) {
+            //查询该签到的信息
+            UserSigns userSigns = userSignMapper.selectById(userSign.getSignId());
+            if (userSigns != null){
+                if (userSigns.getEndTime().after(userSign.getSignTime())){//未超时
+                    //update数据库
+                    //去除signUId，增加signEntity
+                    String signUId = userSigns.getSignUId();
+                    Type type = new TypeToken<List<UserSign>>(){}.getType();
+                    List<UserSign> userSignList = gson.fromJson(signUId, type);
+                    if (userSignList == null){
+                        userSignList = new ArrayList<>();
+                    }
+                    userSignList.add(userSign);
 
 //                //更新数据库
 //                String json = gson.toJson(userSignList);
 //                userSignMapper.updateSignUId(userSign.getSignId(), json);
-                sqlSession.close();
-                return false;
+                    sqlSession.close();
+                    return false;
+                }
             }
+            sqlSession.close();
+            return true;
+        } catch (Exception e) {
+            throw new IOException("数据库读取失败");
         }
-        sqlSession.close();
-        return true;
+
     }
 
 }

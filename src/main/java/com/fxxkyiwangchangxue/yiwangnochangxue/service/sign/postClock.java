@@ -76,7 +76,13 @@ public class postClock extends HttpServlet {
         SqlSession sqlSession = sqlSessionFactory.openSession(true);
         UserSignMapper userSignMapper = sqlSession.getMapper(UserSignMapper.class);
 
-        userSignMapper.insertNewSign(signInform);
-        return signInform.getSignId();
+        try (sqlSession) {
+            userSignMapper.insertNewSign(signInform);
+            return signInform.getSignId();
+        } catch (Exception e) {
+            e.printStackTrace();
+            sqlSession.rollback();
+            throw new SQLException("SB数据库");
+        }
     }
 }
