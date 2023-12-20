@@ -19,6 +19,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @WebServlet(name = "GetSignInfor", value = "/GetSignInfor")
 public class GetSignInfor extends HttpServlet {
@@ -181,7 +182,7 @@ public class GetSignInfor extends HttpServlet {
 
             for (UserSign usersign :
                     userSignList) {
-                if(usersign.getStudentId() == studentId){//签过
+                if(Objects.equals(usersign.getStudentId(), studentId)){//签过
                     System.out.println("judgeStatus:usersign.getStudentId(): "+usersign.getSignId());
                     return true;
                 }
@@ -233,11 +234,9 @@ public class GetSignInfor extends HttpServlet {
 //                //更新数据库
 //                String json = gson.toJson(userSignList);
 //                userSignMapper.updateSignUId(userSign.getSignId(), json);
-                    sqlSession.close();
                     return false;
                 }
             }
-            sqlSession.close();
             return true;
         } catch (Exception e) {
             throw new IOException("数据库读取失败");

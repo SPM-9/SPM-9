@@ -41,7 +41,8 @@ public class postClock extends HttpServlet {
         }
         String signInformJson = sb.toString();
         UserSigns signInform;
-        if (signInformJson==null){
+        if (signInformJson.isEmpty()){
+            response.setStatus(500);
             return;
         }
         signInform = gson.fromJson(signInformJson, UserSigns.class);
@@ -49,9 +50,7 @@ public class postClock extends HttpServlet {
         //是否为空
             //为空返回发布失败
         if (signInform==null){
-            postResult=-1;
-            String postResultJson = gson.toJson(postResult);
-            printWriter.write(postResultJson);
+            response.setStatus(500);
             return;
         }
         //判断发起时间是否在当前时间后
@@ -61,13 +60,14 @@ public class postClock extends HttpServlet {
                 Integer signId = insertSign(signInform);
                 postResult=signId;
             } catch (SQLException e) {
-                postResult=-1;
+                response.setStatus(500);
+                return;
             }
-        }else {
-            postResult=-1;
+        } else {
+            response.setStatus(500);
+            return;
         }
-        String postResultJson = gson.toJson(postResult);
-        printWriter.write(postResultJson);
+        printWriter.write(postResult);
 
     }
 

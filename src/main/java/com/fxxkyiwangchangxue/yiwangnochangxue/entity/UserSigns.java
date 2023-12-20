@@ -1,14 +1,11 @@
 package com.fxxkyiwangchangxue.yiwangnochangxue.entity;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-
 import java.io.Serializable;
 import java.util.Date;
 
 public class UserSigns implements Serializable {
     private Integer signId;
-    private Integer teacherId;
+    private Integer fori_teacherId;
     private String signUId;
 
     private Date startTime;
@@ -17,9 +14,9 @@ public class UserSigns implements Serializable {
     public UserSigns() {
     }
 
-    public UserSigns(Integer signId, Integer teacherId, String signUId, Date startTime, Date endTime) {
+    public UserSigns(Integer signId, Integer fori_teacherId, String signUId, Date startTime, Date endTime) {
         this.signId = signId;
-        this.teacherId = teacherId;
+        this.fori_teacherId = fori_teacherId;
         this.signUId = signUId;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -45,16 +42,16 @@ public class UserSigns implements Serializable {
      * 获取
      * @return teacherId
      */
-    public Integer getTeacherId() {
-        return teacherId;
+    public Integer getFori_teacherId() {
+        return fori_teacherId;
     }
 
     /**
      * 设置
-     * @param teacherId
+     * @param fori_teacherId
      */
-    public void setTeacherId(Integer teacherId) {
-        this.teacherId = teacherId;
+    public void setFori_teacherId(Integer fori_teacherId) {
+        this.fori_teacherId = fori_teacherId;
     }
 
     /**
@@ -106,7 +103,7 @@ public class UserSigns implements Serializable {
     }
 
     public String toString() {
-        return "UserSigns{signId = " + signId + ", teacherId = " + teacherId + ", signUId = " + signUId + ", startTime = " + startTime + ", endTime = " + endTime + "}";
+        return "UserSigns{signId = " + signId + ", teacherId = " + fori_teacherId + ", signUId = " + signUId + ", startTime = " + startTime + ", endTime = " + endTime + "}";
     }
 }
 
