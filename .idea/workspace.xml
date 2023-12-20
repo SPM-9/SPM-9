@@ -9,92 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/3000����վģ�����ӵ��.url" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/app.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/courses.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/about.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/chocolat.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/contact.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/easy-responsive-tabs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/team.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/discussion.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontello.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontello.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontello.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontello.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/app.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/app1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/app_mb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/c-arrows.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/class.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/class2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/g1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/g2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/g3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/g4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/g5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/g6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/g7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/gal1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/gal2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/gal3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/gal32.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/gal4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/gal5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/gal6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/gal7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/gal8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/model.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/scroll-top.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/spm_9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/stretch.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/t1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/t2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/t3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/t4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/top_up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/video.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/join.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.1.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/easing.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/easyResponsiveTabs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-2.2.3.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.chocolat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.countup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.waypoints.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/move-top.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/responsive-nav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/responsiveslides.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/services.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/˵��.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/�������վģ����ϡ�ģ��֮�ҡ�cssMoban.com.url" afterDir="false" />
+    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="web前端">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/discussion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/discussion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/join.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/services.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,37 +83,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Notification.DisplayName-DoNotAsk-Kubernetes Notifications": "Kubernetes",
-    "Notification.DoNotAsk-Kubernetes Notifications": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Web__design",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_directory_selection": "C:/Users/14838/IdeaProjects/YiWangNoChangXue/src/test/java",
-    "last_opened_file_path": "D:/JavaWeb/SPM-9/src/main/webapp/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Kubernetes Notifications&quot;: &quot;Kubernetes&quot;,
+    &quot;Notification.DoNotAsk-Kubernetes Notifications&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Web__design&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/14838/IdeaProjects/YiWangNoChangXue/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaWeb/SPM-9/src/main/webapp/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "java.sql.Driver",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;java.sql.Driver&quot;,
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JavaWeb\SPM-9\src\main\webapp\images" />
@@ -537,6 +462,8 @@
       <workItem from="1702954251187" duration="2554000" />
       <workItem from="1702980550712" duration="2647000" />
       <workItem from="1702991073218" duration="1436000" />
+      <workItem from="1702996994175" duration="2428000" />
+      <workItem from="1703034951170" duration="740000" />
     </task>
     <task id="LOCAL-00001" summary="项目基本">
       <option name="closed" value="true" />
@@ -642,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702885365350</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="web前端">
+      <option name="closed" value="true" />
+      <created>1702997033988</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702997033988</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +616,8 @@
     <MESSAGE value="12.12：22" />
     <MESSAGE value="签到功能调试成功" />
     <MESSAGE value="教师发布签到完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="教师发布签到完成" />
+    <MESSAGE value="web前端" />
+    <option name="LAST_COMMIT_MESSAGE" value="web前端" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
