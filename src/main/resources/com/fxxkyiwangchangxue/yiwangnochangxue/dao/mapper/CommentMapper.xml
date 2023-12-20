@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.CommentMapper">
+
+
+    <insert id="insertComment">
+        insert into `SPM-9`.Comment
+        values (null, #{name}, #{email}, #{subject}, #{content});
+    </insert>
+    <select id="selectAllByCount" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.Comment">
+        select * from `SPM-9`.Comment
+        order by commentId
+        LIMIT #{count};
+    </select>
+</mapper>

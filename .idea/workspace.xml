@@ -9,17 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="web前端">
+    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="修改了页面头部和尾部">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/CommentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/board/GetComment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/board/PostComment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/courses.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/discussion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/discussion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/join.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/services.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +28,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Servlet" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
         <option value="servlet" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -132,7 +130,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Local Tomcat 10.1.13">
-    <configuration name="GetSignInforTest.testGetAppSignList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommentTesr.testInsertComment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YiWangNoChangXue" />
       <extension name="coverage">
         <pattern>
@@ -141,8 +139,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.GetSignInforTest" />
-      <option name="METHOD_NAME" value="testGetAppSignList" />
+      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.CommentTesr" />
+      <option name="METHOD_NAME" value="testInsertComment" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentTesr.testSelectByCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="YiWangNoChangXue" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.CommentTesr" />
+      <option name="METHOD_NAME" value="testSelectByCount" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,22 +189,6 @@
       <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
       <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.UserSignMapperTest" />
       <option name="METHOD_NAME" value="testInsertNewSign" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserSignMapperTest.testSelectAllByTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YiWangNoChangXue" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.UserSignMapperTest" />
-      <option name="METHOD_NAME" value="testSelectAllByTime" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -372,9 +370,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.CommentTesr.testInsertComment" />
+      <item itemvalue="JUnit.CommentTesr.testSelectByCount" />
       <item itemvalue="JUnit.UserSignMapperTest.testInsertNewSign" />
-      <item itemvalue="JUnit.UserSignMapperTest.testSelectAllByTime" />
-      <item itemvalue="JUnit.GetSignInforTest.testGetAppSignList" />
       <item itemvalue="JUnit.GetSignInforTest.testIsOvertime" />
       <item itemvalue="JUnit.UserSignMapperTest.testSelectById" />
       <item itemvalue="Tomcat Server.Local Tomcat 10.1.13" />
@@ -382,11 +380,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CommentTesr.testSelectByCount" />
+        <item itemvalue="JUnit.CommentTesr.testInsertComment" />
         <item itemvalue="JUnit.UserSignMapperTest.testInsertNewSign" />
         <item itemvalue="JUnit.UserSignMapperTest.testSelectById" />
         <item itemvalue="JUnit.GetSignInforTest.testIsOvertime" />
-        <item itemvalue="JUnit.GetSignInforTest.testGetAppSignList" />
-        <item itemvalue="JUnit.UserSignMapperTest.testSelectAllByTime" />
       </list>
     </recent_temporary>
   </component>
@@ -463,7 +461,10 @@
       <workItem from="1702980550712" duration="2647000" />
       <workItem from="1702991073218" duration="1436000" />
       <workItem from="1702996994175" duration="2428000" />
-      <workItem from="1703034951170" duration="740000" />
+      <workItem from="1703034951170" duration="1120000" />
+      <workItem from="1703043578180" duration="595000" />
+      <workItem from="1703076273025" duration="14000" />
+      <workItem from="1703104008322" duration="4140000" />
     </task>
     <task id="LOCAL-00001" summary="项目基本">
       <option name="closed" value="true" />
@@ -577,7 +578,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702997033988</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="修改了页面头部和尾部">
+      <option name="closed" value="true" />
+      <created>1703035757652</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1703035757652</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +626,8 @@
     <MESSAGE value="签到功能调试成功" />
     <MESSAGE value="教师发布签到完成" />
     <MESSAGE value="web前端" />
-    <option name="LAST_COMMIT_MESSAGE" value="web前端" />
+    <MESSAGE value="修改了页面头部和尾部" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改了页面头部和尾部" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
