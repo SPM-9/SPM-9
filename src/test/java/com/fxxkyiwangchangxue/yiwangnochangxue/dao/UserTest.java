@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class UserTest {
@@ -99,6 +101,15 @@ public class UserTest {
         System.out.println(user.getUid());
 
         sqlSession.close();
+    }
+    @Test
+    public void testDate(){
+
+        Date date = new Date();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        System.out.println(formatter.format(date));
+
     }
 
     @Test
