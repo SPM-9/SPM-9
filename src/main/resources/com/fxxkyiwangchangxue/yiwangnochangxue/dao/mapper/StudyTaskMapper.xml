@@ -59,4 +59,36 @@
               taskId not in (SELECT fori_taskId FROM `SPM-9`.Commit WHERE fori_userId = #{userId})
         ORDER BY endTime;
     </select>
+    <select id="selectLatestNoMarkHomework"
+            resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE taskType = 0 and
+            EXISTS(SELECT commitId FROM `SPM-9`.Commit WHERE fori_taskId = StudyTask.taskId and result IS NULL));
+    </select>
+    <select id="selectLatestNoMarkExam"
+            resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE taskType = 1 and
+            EXISTS(SELECT commitId FROM `SPM-9`.Commit WHERE fori_taskId = StudyTask.taskId and result IS NULL));
+    </select>
+    <select id="selectPreviousNoMarkHomework"
+            resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        <![CDATA[
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE (taskType = 0) and taskId < #{thisIndex}
+            and EXISTS(SELECT commitId FROM `SPM-9`.Commit WHERE fori_taskId = StudyTask.taskId and result IS NULL) LIMIT 1);
+        ]]>
+    </select>
+    <select id="selectPreviousNoMarkExam"
+            resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        <![CDATA[
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE (taskType = 1) and taskId < #{thisIndex}
+            and EXISTS(SELECT commitId FROM `SPM-9`.Commit WHERE fori_taskId = StudyTask.taskId and result IS NULL) LIMIT 1);
+        ]]>
+    </select>
 </mapper>

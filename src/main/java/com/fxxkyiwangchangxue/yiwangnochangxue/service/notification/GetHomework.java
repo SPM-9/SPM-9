@@ -32,7 +32,8 @@ public class GetHomework extends HttpServlet {
         String operation = req.getParameter("operation");
         String lastIdx = req.getParameter("lastIndex");
         String refreshCnt = req.getParameter("refreshCount");
-        if (operation == null)
+        String noMark = req.getParameter("noMark");
+        if (operation == null || noMark == null)
             return;
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
         StudyTaskMapper studyTaskMapper = sqlSession.getMapper(StudyTaskMapper.class);
@@ -48,10 +49,18 @@ public class GetHomework extends HttpServlet {
                 List<StudyTask> homeworks = new ArrayList<>(refreshCount + 5);
                 for (int i = 0; i < refreshCount; i++) {
                     StudyTask studyTaskHomework;
-                    if (i == 0)
-                        studyTaskHomework = studyTaskMapper.selectLatestHomework();
-                    else
-                        studyTaskHomework = studyTaskMapper.selectPreviousHomework(lastIndex);
+                    if (noMark.equals("true")) {
+                        if (i == 0)
+                            studyTaskHomework = studyTaskMapper.selectLatestNoMarkHomework();
+                        else
+                            studyTaskHomework = studyTaskMapper.selectPreviousNoMarkHomework(lastIndex);
+                    } else {
+                        if (i == 0)
+                            studyTaskHomework = studyTaskMapper.selectLatestHomework();
+                        else
+                            studyTaskHomework = studyTaskMapper.selectPreviousHomework(lastIndex);
+                    }
+
                     if (studyTaskHomework == null)// 如果返回null，则说明没有更多了
                         break;
                     homeworks.add(studyTaskHomework);
@@ -67,7 +76,11 @@ public class GetHomework extends HttpServlet {
 
                 List<StudyTask> homeworks = new ArrayList<>(refreshCount+5);
                 for(int i = 0; i < refreshCount; i++){
-                    StudyTask studyTaskHomework = studyTaskMapper.selectPreviousHomework(lastIndex);
+                    StudyTask studyTaskHomework;
+                    if (noMark.equals("true"))
+                        studyTaskHomework = studyTaskMapper.selectPreviousNoMarkHomework(lastIndex);
+                    else
+                        studyTaskHomework = studyTaskMapper.selectPreviousHomework(lastIndex);
                     if(studyTaskHomework == null) // 如果返回null，则说明没有更多了
                         break;
                     homeworks.add(studyTaskHomework);
