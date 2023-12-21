@@ -79,15 +79,19 @@ public class UploadStudyTask extends HttpServlet {
 
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
         StudyTaskMapper studyTaskMapper = sqlSession.getMapper(StudyTaskMapper.class);
-
         NotificationMapper notificationMapper = sqlSession.getMapper(NotificationMapper.class);
-        studyTaskMapper.insertStudyTask(studyTask);
-        int taskId = studyTask.getTaskId();
-        notificationMapper.insertStudyTaskNotif(taskId);
-        sqlSession.commit();
 
-        sqlSession.close();
-
+        try (sqlSession) {
+            studyTaskMapper.insertStudyTask(studyTask);
+            int taskId = studyTask.getTaskId();
+            notificationMapper.insertStudyTaskNotif(taskId);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            sqlSession.rollback();
+            return;
+        }
     }
 
     @Override

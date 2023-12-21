@@ -20,4 +20,9 @@ public interface CommitMapper {
                         @Param("body") String body,
                         @Param("fileName") String fileName,
                         @Param("file") byte[] file);
+
+    List<Commit> selectByStudyTaskId(@Param("studyTaskId") int studyTaskId);
+
+    void updateScoreByCommitId(@Param("commitId") int commitId,
+                               @Param("score") int score);
 }

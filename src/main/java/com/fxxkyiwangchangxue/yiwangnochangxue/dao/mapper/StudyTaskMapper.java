@@ -1,6 +1,5 @@
 package com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper;
 
-import com.fxxkyiwangchangxue.yiwangnochangxue.entity.Announcement;
 import com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask;
 import org.apache.ibatis.annotations.Param;
 
@@ -24,6 +23,14 @@ public interface StudyTaskMapper {
     StudyTask selectPreviousHomework(@Param("thisIndex") int index);
 
     StudyTask selectPreviousExam(@Param("thisIndex") int index);
+
+    StudyTask selectLatestNoMarkHomework();
+
+    StudyTask selectLatestNoMarkExam();
+
+    StudyTask selectPreviousNoMarkHomework(@Param("thisIndex") int index);
+
+    StudyTask selectPreviousNoMarkExam(@Param("thisIndex") int index);
 
     List<StudyTask> selectTodoStudyTask(@Param("userId") int userId);
 }

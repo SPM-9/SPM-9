@@ -45,11 +45,16 @@ public class UploadAnnouncement extends HttpServlet {
         AnnouncementMapper announcementMapper = sqlSession.getMapper(AnnouncementMapper.class);
         NotificationMapper notificationMapper = sqlSession.getMapper(NotificationMapper.class);
 
-        announcementMapper.insertAnnouncement(announcement);
-        int taskId = announcement.getAnnId();
-        notificationMapper.insertAnnouncementNotif(taskId);
-        sqlSession.commit();
-        sqlSession.close();
+        try (sqlSession) {
+            announcementMapper.insertAnnouncement(announcement);
+            int taskId = announcement.getAnnId();
+            notificationMapper.insertAnnouncementNotif(taskId);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            sqlSession.rollback();
+            resp.setStatus(500);
+        }
     }
 
     @Override

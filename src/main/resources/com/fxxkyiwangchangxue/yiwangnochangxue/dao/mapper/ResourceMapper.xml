@@ -9,4 +9,8 @@
         INSERT INTO `SPM-9`.Resource(title, body, fileName, file)
         VALUES (#{title}, #{body}, #{fileName}, #{file});
     </insert>
+    <select id="getResource" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.Resource">
+        select resId, title, body, fileName, fileSize from `SPM-9`.Resource;
+    </select>
+
 </mapper>

@@ -34,10 +34,19 @@ public class UserLogin extends HttpServlet {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-        User loginUser = userMapper.selectByLogin(userName, password);
+        User loginUser = null;
+        try (sqlSession) {
+            loginUser = userMapper.selectByLogin(userName, password);
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            return;
+        }
         if (loginUser == null) {
             pw.print("false");
         } else {
+            HttpSession session = req.getSession(true);
+            session.setAttribute("user", loginUser);
             Gson gson = new Gson();
             String json = gson.toJson(loginUser);
             pw.print(json);

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    namespace: 命名空间
+-->
+
+
+<mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.UserSignMapper">
+    <insert id="insertNewSign" useGeneratedKeys="true" keyProperty="signId">
+        insert into `SPM-9`.Sign (fori_teacherId, signUId, startTime, endTime)
+        values (#{teacherId}, '[]', #{startTime},#{endTime});
+    </insert>
+
+    <update id="updateSignUId">
+        update `SPM-9`.Sign
+        <set>
+            signUId = #{signUId}
+        </set>
+        <where>
+            signId=#{id}
+        </where>;
+    </update>
+    <select id="selectAllByTime" resultType="userSigns">
+        select *
+        from `SPM-9`.Sign
+#         maybeWrong
+        where endTime > #{now};
+    </select>
+
+    <select id="selectById" resultType="userSigns">
+        select *
+        from `SPM-9`.Sign
+        where signId=#{id};
+    </select>
+    <select id="selectAll" resultType="userSigns">
+        select *
+        from `SPM-9`.Sign;
+    </select>
+</mapper>

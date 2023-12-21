@@ -27,10 +27,16 @@ public class CheckClass extends HttpServlet {
         int uid = Integer.parseInt(uidString);
 
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
-
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-        User user = userMapper.selectByUID(uid);
-        sqlSession.close();
+
+        User user;
+        try (sqlSession) {
+            user = userMapper.selectByUID(uid);
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            return;
+        }
         if (!user.isChosenCourse()) {
             resp.setStatus(404);
         }else {

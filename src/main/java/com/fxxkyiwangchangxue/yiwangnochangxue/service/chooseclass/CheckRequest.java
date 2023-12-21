@@ -26,10 +26,16 @@ public class CheckRequest extends HttpServlet {
         int uid = Integer.parseInt(uidString);
 
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
-
         SelectCourseRequestMapper courseRequestMapper= sqlSession.getMapper(SelectCourseRequestMapper.class);
-        SelectCourseRequest selectCourseRequest= courseRequestMapper.SelectByUId(uid);
-        sqlSession.close();
+
+        SelectCourseRequest selectCourseRequest;
+        try (sqlSession) {
+            selectCourseRequest = courseRequestMapper.SelectByUId(uid);
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            return;
+        }
 
         if (selectCourseRequest==null) {
             resp.setStatus(404);

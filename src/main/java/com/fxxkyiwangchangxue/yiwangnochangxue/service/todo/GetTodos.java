@@ -42,13 +42,18 @@ public class GetTodos extends HttpServlet {
 
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
         StudyTaskMapper mapper = sqlSession.getMapper(StudyTaskMapper.class);
-        List<StudyTask> todoTasks = mapper.selectTodoStudyTask(userId);
-        sqlSession.close();
 
-        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
-        String json = gson.toJson(todoTasks);
+        try (sqlSession) {
+            List<StudyTask> todoTasks = mapper.selectTodoStudyTask(userId);
 
-        pw.print(json);
+            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
+            String json = gson.toJson(todoTasks);
+            pw.print(json);
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            return;
+        }
     }
 
     @Override

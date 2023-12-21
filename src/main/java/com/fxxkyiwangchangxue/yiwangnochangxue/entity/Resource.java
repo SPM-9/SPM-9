@@ -9,6 +9,7 @@ public class Resource implements Serializable {
     private String body;
     private String fileName;
     private byte[] file;
+    private long fileSize;
 
     public Resource() {
     }
@@ -53,14 +54,23 @@ public class Resource implements Serializable {
         this.file = file;
     }
 
+    public long getFileSize() {
+        return fileSize;
+    }
+
+    public void setFileSize(long fileSize) {
+        this.fileSize = fileSize;
+    }
+
     @Override
     public String toString() {
-        return "ResourceEntity{" +
+        return "Resource{" +
                 "resId=" + resId +
                 ", title='" + title + '\'' +
                 ", body='" + body + '\'' +
                 ", fileName='" + fileName + '\'' +
                 ", file=" + Arrays.toString(file) +
+                ", fileSize=" + fileSize +
                 '}';
     }
 }

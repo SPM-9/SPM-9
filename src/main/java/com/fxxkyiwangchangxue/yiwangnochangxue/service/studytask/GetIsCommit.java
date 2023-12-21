@@ -36,9 +36,17 @@ public class GetIsCommit extends HttpServlet {
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
         CommitMapper commitMapper = sqlSession.getMapper(CommitMapper.class);
 
-        Commit commit = commitMapper.SelectByTaskIdUId(taskId, userId);
-        if (commit == null)
+        Commit commit = null;
+        try (sqlSession) {
+            commit = commitMapper.SelectByTaskIdUId(taskId, userId);
+            if (commit == null)
+                return;
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
             return;
+        }
+
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
         String json = gson.toJson(commit);
         pw.print(json);

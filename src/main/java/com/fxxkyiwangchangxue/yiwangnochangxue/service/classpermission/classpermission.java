@@ -27,11 +27,17 @@ public class classpermission extends HttpServlet {
         boolean accept = Boolean.parseBoolean(isAccept);
 
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
-
         SelectCourseRequestMapper courseRequestMapper= sqlSession.getMapper(SelectCourseRequestMapper.class);
-        courseRequestMapper.updateByTeacherId(id,uid,accept);
-        sqlSession.commit();
-        sqlSession.close();
+
+        try (sqlSession) {
+            courseRequestMapper.updateByTeacherId(id,uid,accept);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            sqlSession.rollback();
+            resp.setStatus(500);
+            return;
+        }
         if(accept){
             resp.setStatus(200);
         }else {

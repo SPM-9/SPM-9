@@ -40,16 +40,22 @@ public class TeacherLogin extends HttpServlet {
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
         TeacherMapper teacherMapper = sqlSession.getMapper(TeacherMapper.class);
 
-        Teacher loginTeacher = teacherMapper.selectByLogin(teacher);
-        if (loginTeacher == null) {
-            pw.print("false");
-        } else {
-            Gson gson = new Gson();
-            String json = gson.toJson(loginTeacher);
-            pw.print(json);
+        try (sqlSession) {
+            Teacher loginTeacher = teacherMapper.selectByLogin(teacher);
+            if (loginTeacher == null) {
+                pw.print("false");
+            } else {
+                HttpSession session = req.getSession(true);
+                session.setAttribute("teacher", teacher);
+                Gson gson = new Gson();
+                String json = gson.toJson(loginTeacher);
+                pw.print(json);
+            }
+        } catch (Exception e) {
+            resp.setStatus(500);
+            e.printStackTrace();
+            return;
         }
-
-        sqlSession.close();
     }
 
     @Override
