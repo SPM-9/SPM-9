@@ -10,7 +10,7 @@
         VALUES (#{title}, #{body}, #{fileName}, #{file});
     </insert>
     <select id="getResource" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.Resource">
-        select  resId, title, body, fileName from `SPM-9`.Resource;
+        select resId, title, body, fileName, fileSize from `SPM-9`.Resource;
     </select>
 
 </mapper>
