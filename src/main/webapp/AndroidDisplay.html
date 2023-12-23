@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>安卓演示</title>
+    <!-- 引入 Element UI 样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <style>
+        .carouselBox {
+            width: 100%;
+            margin: 0 auto;
+            padding: 5px 0 ;
+        }
+        .el-carousel__item img{
+            position:relative;
+            color: #475669;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #f6f8fb;
+            width: 308px;
+            height: 380px;
+            border-radius: 14px;
+            box-shadow: 0px 0px 11px 0px rgba(35, 35, 35, 0.14);
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <div>
+
+                    <el-card style="background-color: black">
+                        <div style="display: flex;">
+                            <span style="font-size: 50px;font-weight: bold;color: white;margin-left: 130px">学生端</span>
+                        </div>
+                        <div class="carouselBox" style="">
+                            <el-carousel :interval="3000" type="card" height="380px" :autoplay="true">
+                                <el-carousel-item v-for="(item, index) in images1" :key="index">
+                                    <img :src="item" alt="" style="width:150px;height: 350px" />
+                                </el-carousel-item>
+                            </el-carousel>
+                        </div>
+                    </el-card>
+                    <el-card style="background-color: black">
+                        <div style="display: flex;">
+                            <span style="font-size: 50px;font-weight: bold;color: white;margin-left: 130px">教师端</span>
+                        </div>
+                        <div class="carouselBox" style="">
+                            <el-carousel :interval="3000" type="card" height="380px" :autoplay="true">
+                                <el-carousel-item v-for="(item, index) in images2" :key="index">
+                                    <img :src="item" alt="" style="width:150px;height: 350px" />
+                                </el-carousel-item>
+                            </el-carousel>
+                        </div>
+                    </el-card>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return{
+                isCollapse:false,
+                asideWidth:'200px',
+                collapseIcon:'el-icon-s-fold',
+                value:'',
+                images1: [
+                    'images/android_display_1.jpg',
+                    'images/android_display_2.jpg',
+                    'images/android_display_3.jpg',
+                    'images/android_display_4.jpg',
+                    'images/android_display_5.jpg',
+                    'images/android_display_6.jpg',
+                    'images/android_display_7.jpg',
+                ],
+                images2: [
+                    'images/android_display_8.jpg',
+                    'images/android_display_9.jpg',
+                    'images/android_display_10.jpg',
+                    'images/android_display_11.jpg',
+                ],
+
+            }
+        },
+        methods:{
+            handleCollapse(){
+                this.isCollapse=!this.isCollapse
+                this.asideWidth=this.isCollapse ? '64px':'200px'
+                this.collapseIcon=this.isCollapse ? 'el-icon-s-unfold':'el-icon-s-fold'
+            },
+        }
+
+    })
+</script>
+</body>
+</html>
