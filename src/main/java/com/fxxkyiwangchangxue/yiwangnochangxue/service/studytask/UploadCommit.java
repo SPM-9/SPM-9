@@ -44,18 +44,27 @@ public class UploadCommit extends HttpServlet {
             InputStream is = filePart.getInputStream();
             BufferedInputStream bis = new BufferedInputStream(is);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            IOUtils.copy(bis, baos);
-            file = baos.toByteArray();
+            try (bis; baos){
+                IOUtils.copy(bis, baos);
+                file = baos.toByteArray();
+            } catch (Exception e) {
+                e.printStackTrace();
+                resp.setStatus(500);
+                return;
+            }
         }
 
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
         CommitMapper commitMapper = sqlSession.getMapper(CommitMapper.class);
 
-        commitMapper.InsertCommit(userId, taskId, body, fileName, file);
-        sqlSession.commit();
-
-        sqlSession.close();
-        resp.setStatus(200);
+        try (sqlSession) {
+            commitMapper.InsertCommit(userId, taskId, body, fileName, file);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            return;
+        }
     }
 
     @Override

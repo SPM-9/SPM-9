@@ -4,6 +4,14 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.NotificationMapper">
+    <insert id="insertStudyTaskNotif">
+        INSERT INTO Notification (fori_taskId, notifType)
+        VALUES (#{taskId}, 0);
+    </insert>
+    <insert id="insertAnnouncementNotif">
+        INSERT INTO `SPM-9`.Notification (fori_annId, notifType)
+        VALUES (#{annId}, 1);
+    </insert>
 
     <select id="selectAll" resultType="Notification">
         SELECT * FROM Notification;

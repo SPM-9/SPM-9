@@ -1,5 +1,6 @@
 package com.fxxkyiwangchangxue.yiwangnochangxue.dao;
 
+import com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.SelectCourseRequestMapper;
 import com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.UserMapper;
 import com.fxxkyiwangchangxue.yiwangnochangxue.entity.User;
 import com.google.gson.Gson;
@@ -108,6 +109,64 @@ public class UserTest {
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         System.out.println(formatter.format(date));
+
+    }
+
+    @Test
+    public void checkclass() throws IOException {
+        int uid = 1;
+
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        User user = userMapper.selectByUID(uid);
+        sqlSession.close();
+        System.out.println(user.isChosenCourse());
+    }
+    @Test
+    public void insert() throws IOException {
+        int uid=3;
+
+        SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
+
+        SelectCourseRequestMapper courseRequestMapper= sqlSession.getMapper(SelectCourseRequestMapper.class);
+        courseRequestMapper.InsertByUID(uid);
+        sqlSession.commit();
+        sqlSession.close();
+
+        System.out.println(1);
+    }
+    @Test
+    public void permit()throws IOException {
+        int id = 1;
+        int uid = 3;
+        boolean accept = true;
+
+        SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
+
+        SelectCourseRequestMapper courseRequestMapper= sqlSession.getMapper(SelectCourseRequestMapper.class);
+        courseRequestMapper.updateByTeacherId(id,uid,accept);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public void modify()throws IOException {
+
+
+        int uid = 1;
+        boolean accept = true;
+
+        SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
+
+        UserMapper userMapper= sqlSession.getMapper(UserMapper.class);
+        userMapper.updateByUid(uid,accept);
+        sqlSession.commit();
+        sqlSession.close();
 
     }
 }
