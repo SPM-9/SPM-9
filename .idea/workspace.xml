@@ -10,14 +10,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="修改了页面头部和尾部">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/CommentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/board/GetComment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/board/PostComment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/CommentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/AndroidDisplay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/android_display_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/android_display_10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/android_display_11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/android_display_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/android_display_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/android_display_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/android_display_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/android_display_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/android_display_7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/android_display_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/android_display_9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/banner_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/daily_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/daily_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/daily_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/daily_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/daily_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/daily_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/daily_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/daily_8.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/discussion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/discussion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +50,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Servlet" />
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
         <option value="servlet" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -90,10 +112,10 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Web__design&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Web__design__cj&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/14838/IdeaProjects/YiWangNoChangXue/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/JavaWeb/SPM-9/src/main/webapp/images&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/SPM-9/src/main/webapp/images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -114,11 +136,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\Desktop\SPM-9\src\main\webapp\images" />
       <recent name="D:\JavaWeb\SPM-9\src\main\webapp\images" />
       <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\resources" />
       <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\java\com\fxxkyiwangchangxue\yiwangnochangxue\Service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\Desktop\SPM-9\src\main\webapp\images" />
       <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\resources\com\fxxkyiwangchangxue\yiwangnochangxue\DAO\mapper" />
       <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\resources\com\fxxkyiwangchangxue\yiwangnochangxue" />
     </key>
@@ -129,7 +153,7 @@
       <recent name="com.fxxkyiwangchangxue.yiwangnochangxue.DAO" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Local Tomcat 10.1.13">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="CommentTesr.testInsertComment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YiWangNoChangXue" />
       <extension name="coverage">
@@ -162,22 +186,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetSignInforTest.testIsOvertime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YiWangNoChangXue" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.GetSignInforTest" />
-      <option name="METHOD_NAME" value="testIsOvertime" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserSignMapperTest.testInsertNewSign" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YiWangNoChangXue" />
       <extension name="coverage">
@@ -194,21 +202,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserSignMapperTest.testSelectById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YiWangNoChangXue" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.UserSignMapperTest" />
-      <option name="METHOD_NAME" value="testSelectById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="AndroidDisplay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SPM-9/src/main/webapp/AndroidDisplay.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SPM-9/src/main/webapp/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
     </configuration>
     <configuration name="Local Tomcat 10.1.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.13" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
@@ -370,21 +368,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.AndroidDisplay.html" />
+      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="JUnit.CommentTesr.testInsertComment" />
       <item itemvalue="JUnit.CommentTesr.testSelectByCount" />
       <item itemvalue="JUnit.UserSignMapperTest.testInsertNewSign" />
-      <item itemvalue="JUnit.GetSignInforTest.testIsOvertime" />
-      <item itemvalue="JUnit.UserSignMapperTest.testSelectById" />
       <item itemvalue="Tomcat Server.Local Tomcat 10.1.13" />
       <item itemvalue="Tomcat Server.Tomcat 10.1.13" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.AndroidDisplay.html" />
         <item itemvalue="JUnit.CommentTesr.testSelectByCount" />
         <item itemvalue="JUnit.CommentTesr.testInsertComment" />
         <item itemvalue="JUnit.UserSignMapperTest.testInsertNewSign" />
-        <item itemvalue="JUnit.UserSignMapperTest.testSelectById" />
-        <item itemvalue="JUnit.GetSignInforTest.testIsOvertime" />
       </list>
     </recent_temporary>
   </component>
@@ -465,6 +463,10 @@
       <workItem from="1703043578180" duration="595000" />
       <workItem from="1703076273025" duration="14000" />
       <workItem from="1703104008322" duration="4140000" />
+      <workItem from="1703174881836" duration="1697000" />
+      <workItem from="1703176588910" duration="936000" />
+      <workItem from="1703210482276" duration="12000" />
+      <workItem from="1703299829902" duration="8338000" />
     </task>
     <task id="LOCAL-00001" summary="项目基本">
       <option name="closed" value="true" />
