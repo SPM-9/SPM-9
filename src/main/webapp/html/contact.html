@@ -2,10 +2,21 @@
 <html>
 
 <head>
-	<title>Join</title>
+	<title>Contact</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<meta name="keywords" content="" />
+	<style>
+		.container {
+			width: 100%; /* 可以根据需要设置容器的宽度 */
+		}
+
+		.container img {
+			max-width: 100%; /* 图片的最大宽度不超过容器宽度 */
+			height: auto; /* 保持图片的宽高比例 */
+			display: block; /* 去除底部间隙 */
+		}
+	</style>
 
 	<script type="application/x-javascript">
 		addEventListener("load", function () {
@@ -16,9 +27,10 @@
 			window.scrollTo(0, 1);
 		}
 	</script>
-	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
-	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="../css/style.css" rel='stylesheet' type='text/css' />
+	<link href="../css/contact.css" rel='stylesheet' type='text/css' />
+	<link href="../css/font-awesome.css" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
 </head>
@@ -58,32 +70,32 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<h1><a class="navbar-brand" href="index.html">项目管理在线学习网站 <span></span></a></h1>
+						<h1><a class="navbar-brand" href="../index.html">项目管理在线学习网站 <span></span></a></h1>
 					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 						<nav>
 							<ul class="top_nav">
-								<li><a href="index.html" class="active">首页</a></li>
+								<li><a href="../index.html" >首页</a></li>
 								<li><a href="about.html">课程介绍</a></li>
-								<li class="dropdown">
+								<li class="dropdown" >
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">课程学习<span class="fa fa-angle-down"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="services.html">教学视频</a></li>
-										<li><a href="join.html">选课</a></li>
+										<li><a href="app.html">选课</a></li>
 									</ul>
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Pages" role="button" aria-haspopup="true" aria-expanded="false">课程实践<span class="fa fa-angle-down"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="join.html">课程大作业</a></li>
-										<li><a href="join.html">日常测验</a></li>
-										<li><a href="join.html">课后作业</a></li>
+										<li><a href="app.html">课程大作业</a></li>
+										<li><a href="app.html">日常测验</a></li>
+										<li><a href="app.html">课后作业</a></li>
 									</ul>
 								</li>
 								<li><a href="courses.html">学习模块</a></li>
 								<li><a href="discussion.html">留言板</a></li>
-								<li><a href="contact.html">联系我们</a></li>
+								<li><a href="contact.html" class="active">联系我们</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -101,12 +113,13 @@
 		<div class="inner_breadcrumb">
 
 			<ul class="short">
-				<li><a href="index.html">Home</a><span>|</span></li>
-				<li>Join now</li>
+				<li><a href="../index.html">首页</a><span>|</span></li>
+				<li>联系我们</li>
 			</ul>
 		</div>
 	</div>
 	<!--//short-->
+	<!-- //inner_content -->
 
 	<!-- Modal1 -->
 	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
@@ -120,7 +133,7 @@
 
 						<div class="login-m_page_img">
 
-							<img src="images/model.jpg" alt=" " class="img-responsive" />
+							<img src="../images/model.jpg" alt=" " class="img-responsive" />
 
 						</div>
 						<div class="login-m_page">
@@ -162,7 +175,7 @@
 
 						<div class="login-m_page_img">
 
-							<img src="images/model.jpg" alt=" " class="img-responsive" />
+							<img src="../images/model.jpg" alt=" " class="img-responsive" />
 
 						</div>
 						<div class="login-m_page">
@@ -187,84 +200,51 @@
 	<!-- //Modal2 -->
 
 	<!--//Header-->
-	<!--/inner_connectent-->
 	<div class="banner_bottom">
 		<div class="container">
-			<h3 class="headerw3">Join now</h3>
-			<div class="inner_sec_w3_agileinfo">
-				<div class="register-form">
-					<form action="#" method="post">
-						<div class="fields-grid">
-							<div class="styled-input">
-								<input type="text" placeholder="Your Name" name="Your name" required="">
-							</div>
-							<div class="styled-input">
-								<input id="datepicker" placeholder="Birth Date" name="Text" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-								    required="">
-							</div>
-							<div class="styled-input agile-styled-input-top">
-								<select class="category2" required="">
-												<option value="">Gender</option>
-												<option value="">Female</option>
-												<option value="">Male</option>
-												<option value="">Other</option>
-											</select>
-							</div>
-							<div class="styled-input">
-								<input type="email" placeholder="Your E-mail" name="Email" required="">
-							</div>
-							<div class="styled-input">
-								<input type="text" placeholder="Phone Number" name="Phone" required="">
-							</div>
-							<div class="styled-input agile-styled-input-top">
-								<select class="category2" required="">
-												<option value="">Select Course</option>
-												<option value="">Web Designing</option>
-												<option value="">Web Technology </option>
-												<option value="">PC Systems </option>
-												<option value="">IT Foundations </option>
-												<option value="">HR Management </option>
-												<option value="">Modeling </option>
-												<option value="">Basic Marketing</option>
-											</select>
-								<span></span>
-							</div>
-							<div class="styled-input">
-								<div class="agileits_w3layouts_grid">
-									<select class="category2" name="category1" required="">
-													<option value="">Select Course Time</option>
-													<option value="">Hours: 8am - 10am</option>
-													<option value="">Hours: 10am - 12pm</option>
-													<option value="">Hours: 12pm - 4pm</option>
-													<option value="">Hours: 4pm - 7pm</option>
-													<option value="">Hours: 7pm - 9pm</option>
-												</select>
-								</div>
-							</div>
-							<div class="styled-input">
-								<label class="headerw3">Your Address</label>
-								<div class="">
-									<input type="text" name="name" placeholder="Address" title="Please enter your Address" required="">
-								</div>
-								<div class="">
-									<input type="text" name="name" placeholder="Line" title="Please enter your Line" required="">
-								</div>
-								<div class="">
-									<input type="text" name="name" placeholder="City" title="Please enter your City" required="">
-								</div>
-								<div class="">
-									<input type="text" name="name" placeholder="Zip Code" title="Please enter your Zip code" required="">
-								</div>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<input type="submit" value="Submit">
-					</form>
-				</div>
+			<div class="tittle_head">
+				<h3 class="headerw3">SPM-9 小组 </h3>
 			</div>
+			<div class="inner_sec_w3_agileinfo">
+				<div class="col-md-8 map">
+					<img src="../images/spm_9.jpg">
+				</div>
+				<div class="col-md-4 contact_grids_info">
+					<div class="contact_grid">
+						<div class="contact_grid_right">
+							<h4> 小组成员</h4>
+							<p>王嘉、王秋实、胡倍豪,</p>
+							<p>刘振宇、王彪、尹敬智、吴琦</p>
+						</div>
+					</div>
+					<div class="contact_grid">
+						<div class="contact_grid_right">
+							<h4> 联系方式</h4>
+							<p>Email：usst580@pp.com</p>
+							<p>phone:18888888888</p>
+						</div>
+					</div>
+					<div class="contact_grid" data-aos="flip-up">
+
+						<div class="contact_grid_right">
+							<h4>位置</h4>
+							<p>军工路580号</p>
+							<p>第五食堂</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+
+			<div class="clearfix"> </div>
+
 		</div>
 	</div>
-	<!--//inner_connectent-->
+	</div>
+
 	<!--footer-->
 	<div class="contact-footer-w3layouts-agile">
 
@@ -273,7 +253,7 @@
 				<div class="col-md-8 botttom-nav-w3ls-agileits">
 					<ul class="f_links col-md-4">
 						<li>
-							<a href="index.html">首页</a>
+							<a href="../index.html">首页</a>
 						</li>
 						<li>
 							<a href="about.html">课程介绍</a>
@@ -288,7 +268,7 @@
 					</ul>
 					<ul class="f_links col-md-4">
 						<li>
-							<a href="index.html">课程大作业</a>
+							<a href="../index.html">课程大作业</a>
 						</li>
 						<li>
 							<a href="404.html">日常测验</a>
@@ -324,21 +304,21 @@
 			</div>
 		</div>
 		<div class="copy-w3-agileits">
-			<h2 class="footer-logo"><a href="index.html">项目管理在线学习网站<span>No Study</span></a></h2>
+			<h2 class="footer-logo"><a href="../index.html">项目管理在线学习网站<span>No Study</span></a></h2>
 			<p>SPM-9"一起加油小组"荣誉出品<a target="_blank" href="http://www.cssmoban.com/">No Study</a></p>
 			<div class="clearfix"></div>
 		</div>
 	</div>
 	<!--/footer -->
 	<!-- js -->
-	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
 	<!-- //js -->
 	<!--search-bar-->
-	<script src="js/main.js"></script>
+	<script src="../js/main.js"></script>
 	<!--//search-bar-->
 	<!-- start-smoth-scrolling -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript" src="../js/move-top.js"></script>
+	<script type="text/javascript" src="../js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {
@@ -368,7 +348,7 @@
 		});
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-	<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap-3.1.1.min.js"></script>
 
 
 </body>

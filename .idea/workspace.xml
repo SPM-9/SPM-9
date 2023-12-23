@@ -9,8 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="合并功能，但缺少内容1">
+    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="调整了跳转app二维码页面和英译中">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/services.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/3000����վģ�����ӵ��.url" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/3000����վģ�����ӵ��.url" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/discussion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/discussion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/join.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/services.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/˵��.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/˵��.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/�������վģ����ϡ�ģ��֮�ҡ�cssMoban.com.url" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/�������վģ����ϡ�ģ��֮�ҡ�cssMoban.com.url" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +99,7 @@
     "git-widget-placeholder": "Web__design",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "last_directory_selection": "C:/Users/14838/IdeaProjects/YiWangNoChangXue/src/test/java",
-    "last_opened_file_path": "C:/Users/Lenovo/Desktop/SPM-9/src/main/webapp/images",
+    "last_opened_file_path": "D:/JavaWeb/SPM-9/src/main/webapp/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -107,15 +120,17 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Lenovo\Desktop\SPM-9\src\main\webapp\images" />
       <recent name="D:\JavaWeb\SPM-9\src\main\webapp\images" />
+      <recent name="C:\Users\Lenovo\Desktop\SPM-9\src\main\webapp\images" />
       <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\resources" />
       <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\java\com\fxxkyiwangchangxue\yiwangnochangxue\Service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaWeb\SPM-9\src\main\webapp" />
+      <recent name="D:\JavaWeb\SPM-9\src\main\webapp\html" />
+      <recent name="D:\JavaWeb\SPM-9\src\main\webapp\images" />
       <recent name="C:\Users\Lenovo\Desktop\SPM-9\src\main\webapp\images" />
       <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\resources\com\fxxkyiwangchangxue\yiwangnochangxue\DAO\mapper" />
-      <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\resources\com\fxxkyiwangchangxue\yiwangnochangxue" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.fxxkyiwangchangxue.yiwangnochangxue" />
@@ -173,10 +188,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AndroidDisplay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SPM-9/src/main/webapp/AndroidDisplay.html" useBuiltInWebServerPort="true">
+    <configuration name="AndroidDisplay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SPM-9/src/main/webapp/images/AndroidDisplay.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SPM-9/src/main/webapp/index.html" useBuiltInWebServerPort="true">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SPM-9/src/main/webapp/images/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="Local Tomcat 10.1.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.13" ALTERNATIVE_JRE_ENABLED="false">
@@ -575,7 +590,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703334597571</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="调整了跳转app二维码页面和英译中">
+      <option name="closed" value="true" />
+      <created>1703337094901</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1703337094901</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +641,8 @@
     <MESSAGE value="修改了页面头部和尾部" />
     <MESSAGE value="合并功能，但缺少内容" />
     <MESSAGE value="合并功能，但缺少内容1" />
-    <option name="LAST_COMMIT_MESSAGE" value="合并功能，但缺少内容1" />
+    <MESSAGE value="调整了跳转app二维码页面和英译中" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整了跳转app二维码页面和英译中" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
