@@ -9,11 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="修改了页面头部和尾部">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="合并功能，但缺少内容1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/board/PostComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/board/PostComment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/discussion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/discussion.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +124,7 @@
       <recent name="com.fxxkyiwangchangxue.yiwangnochangxue.DAO" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="Tomcat Server.Local Tomcat 10.1.13">
     <configuration name="CommentTesr.testInsertComment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YiWangNoChangXue" />
       <extension name="coverage">
@@ -562,7 +559,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703035757652</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="合并功能，但缺少内容">
+      <option name="closed" value="true" />
+      <created>1703334577669</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703334577669</updated>
+    </task>
+    <task id="LOCAL-00017" summary="合并功能，但缺少内容1">
+      <option name="closed" value="true" />
+      <created>1703334597571</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1703334597571</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +616,9 @@
     <MESSAGE value="教师发布签到完成" />
     <MESSAGE value="web前端" />
     <MESSAGE value="修改了页面头部和尾部" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改了页面头部和尾部" />
+    <MESSAGE value="合并功能，但缺少内容" />
+    <MESSAGE value="合并功能，但缺少内容1" />
+    <option name="LAST_COMMIT_MESSAGE" value="合并功能，但缺少内容1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
