@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="test">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/opt/tomcat/webapps" local="$PROJECT_DIR$" web="http://121.41.1.13:8080" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
