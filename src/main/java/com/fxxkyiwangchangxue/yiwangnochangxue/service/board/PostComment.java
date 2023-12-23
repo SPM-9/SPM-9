@@ -23,7 +23,6 @@ public class PostComment extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("他来了");
         response.setContentType("text/html; charset = UTF-8");
         PrintWriter pw = response.getWriter();
 
