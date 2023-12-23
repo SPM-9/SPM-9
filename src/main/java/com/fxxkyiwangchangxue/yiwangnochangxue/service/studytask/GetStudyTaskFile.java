@@ -41,8 +41,14 @@ public class GetStudyTaskFile extends HttpServlet {
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
         StudyTaskMapper studyTaskMapper = sqlSession.getMapper(StudyTaskMapper.class);
 
-        StudyTask studyTask = studyTaskMapper.SelectFileById(taskId);
-        sqlSession.close();
+        StudyTask studyTask;
+        try (sqlSession) {
+            studyTask = studyTaskMapper.SelectFileById(taskId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            return;
+        }
         // 没有文件则返回404
         if (studyTask.getFileName() == null || studyTask.getFile() == null) {
             resp.setStatus(404);
@@ -57,9 +63,11 @@ public class GetStudyTaskFile extends HttpServlet {
         InputStream fileIn = new ByteArrayInputStream(studyTask.getFile());
         ServletOutputStream fileOut = resp.getOutputStream();
 
-        IOUtils.copy(fileIn, fileOut);
-        fileIn.close();
-        fileOut.close();
+        try (sqlSession) {
+            IOUtils.copy(fileIn, fileOut);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

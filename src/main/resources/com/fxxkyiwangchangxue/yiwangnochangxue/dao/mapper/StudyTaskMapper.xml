@@ -4,6 +4,10 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.StudyTaskMapper">
+    <insert id="insertStudyTask" useGeneratedKeys="true" keyProperty="taskId">
+        INSERT INTO StudyTask (fori_teacherId, taskType, title, body, fileName, file, startTime, endTime)
+        VALUES (#{fori_teacherId}, #{taskType}, #{title}, #{body}, #{fileName}, #{file}, #{startTime}, #{endTime});
+    </insert>
 
     <select id="SelectAll" resultType="StudyTask">
         SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
@@ -23,5 +27,68 @@
         SELECT OCTET_LENGTH(file) DATASIZE
         FROM StudyTask
         WHERE taskId = #{id};
+    </select>
+    <select id="selectLatestHomework" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE taskType = 0);
+    </select>
+    <select id="selectLatestExam" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE taskType = 1);
+    </select>
+    <select id="selectPreviousHomework" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        <![CDATA[
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE (taskType = 0) and taskId < #{thisIndex} LIMIT 1);
+        ]]>
+    </select>
+    <select id="selectPreviousExam" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        <![CDATA[
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE (taskType = 1) and taskId < #{thisIndex} LIMIT 1);
+        ]]>
+    </select>
+    <select id="selectTodoStudyTask" resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE NOW() BETWEEN startTime and endTime and
+              taskId not in (SELECT fori_taskId FROM `SPM-9`.Commit WHERE fori_userId = #{userId})
+        ORDER BY endTime;
+    </select>
+    <select id="selectLatestNoMarkHomework"
+            resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE taskType = 0 and
+            EXISTS(SELECT commitId FROM `SPM-9`.Commit WHERE fori_taskId = StudyTask.taskId and result IS NULL));
+    </select>
+    <select id="selectLatestNoMarkExam"
+            resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE taskType = 1 and
+            EXISTS(SELECT commitId FROM `SPM-9`.Commit WHERE fori_taskId = StudyTask.taskId and result IS NULL));
+    </select>
+    <select id="selectPreviousNoMarkHomework"
+            resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        <![CDATA[
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE (taskType = 0) and taskId < #{thisIndex}
+            and EXISTS(SELECT commitId FROM `SPM-9`.Commit WHERE fori_taskId = StudyTask.taskId and result IS NULL) LIMIT 1);
+        ]]>
+    </select>
+    <select id="selectPreviousNoMarkExam"
+            resultType="com.fxxkyiwangchangxue.yiwangnochangxue.entity.StudyTask">
+        <![CDATA[
+        SELECT taskId, fori_teacherId, taskType, title, body, fileName, startTime, endTime
+        FROM `SPM-9`.StudyTask
+        WHERE taskId = (SELECT MAX(taskId) FROM StudyTask WHERE (taskType = 1) and taskId < #{thisIndex}
+            and EXISTS(SELECT commitId FROM `SPM-9`.Commit WHERE fori_taskId = StudyTask.taskId and result IS NULL) LIMIT 1);
+        ]]>
     </select>
 </mapper>

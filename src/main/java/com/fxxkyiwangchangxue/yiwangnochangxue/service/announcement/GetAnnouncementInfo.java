@@ -33,8 +33,14 @@ public class GetAnnouncementInfo extends HttpServlet {
         SqlSession sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();
         AnnouncementMapper announcementMapper = sqlSession.getMapper(AnnouncementMapper.class);
 
-        Announcement announcement = announcementMapper.SelectById(annId);
-        sqlSession.close();
+        Announcement announcement;
+        try (sqlSession) {
+            announcement = announcementMapper.SelectById(annId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            resp.setStatus(500);
+            return;
+        }
 
         if (announcement == null) {
             resp.setStatus(404);

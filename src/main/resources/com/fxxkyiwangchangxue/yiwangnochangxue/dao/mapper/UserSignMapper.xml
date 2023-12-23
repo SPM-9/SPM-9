@@ -9,16 +9,9 @@
 
 
 <mapper namespace="com.fxxkyiwangchangxue.yiwangnochangxue.dao.mapper.UserSignMapper">
-    <resultMap id="UserSignsMap" type="UserSigns">
-        <result column="signId" property="signId" jdbcType="INTEGER"/>
-        <result column="fori_teacherId" property="teacherId" jdbcType="INTEGER"/>
-        <result column="signUId" property="signUId" jdbcType="VARCHAR"/>
-        <result column="startTime" property="startTime" jdbcType="DATE"/>
-        <result column="endTime" property="endTime" jdbcType="DATE"/>
-    </resultMap>
     <insert id="insertNewSign" useGeneratedKeys="true" keyProperty="signId">
-        insert into `SPM-9`.Sign
-        values (null,#{teacherId},null,#{startTime},#{endTime});
+        insert into `SPM-9`.Sign (fori_teacherId, signUId, startTime, endTime)
+        values (#{teacherId}, '[]', #{startTime},#{endTime});
     </insert>
 
     <update id="updateSignUId">
@@ -30,19 +23,19 @@
             signId=#{id}
         </where>;
     </update>
-    <select id="selectAllByTime" resultMap="UserSignsMap">
+    <select id="selectAllByTime" resultType="userSigns">
         select *
         from `SPM-9`.Sign
 #         maybeWrong
         where endTime > #{now};
     </select>
 
-    <select id="selectById" resultMap="UserSignsMap">
+    <select id="selectById" resultType="userSigns">
         select *
         from `SPM-9`.Sign
         where signId=#{id};
     </select>
-    <select id="selectAll" resultMap="UserSignsMap">
+    <select id="selectAll" resultType="userSigns">
         select *
         from `SPM-9`.Sign;
     </select>
