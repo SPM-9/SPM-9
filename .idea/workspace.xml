@@ -9,12 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="签到功能调试成功">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/sign/postClock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="11872b7c-b9cc-4bd1-9878-71007a9ca43a" name="更改" comment="调整了跳转app二维码页面和英译中">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/services.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/UserSignMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/UserSignMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/UserSignMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/fxxkyiwangchangxue/yiwangnochangxue/dao/mapper/UserSignMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/3000����վģ�����ӵ��.url" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/3000����վģ�����ӵ��.url" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/discussion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/discussion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/join.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/services.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/˵��.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/˵��.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/�������վģ����ϡ�ģ��֮�ҡ�cssMoban.com.url" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/�������վģ����ϡ�ģ��֮�ҡ�cssMoban.com.url" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +37,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="servlet" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -35,7 +45,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="temp" />
+        <entry key="$PROJECT_DIR$" value="WJ_Feature" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,44 +87,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Notification.DisplayName-DoNotAsk-Kubernetes Notifications&quot;: &quot;Kubernetes&quot;,
-    &quot;Notification.DoNotAsk-Kubernetes Notifications&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;WJ__Feature&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/14838/IdeaProjects/YiWangNoChangXue/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/14838/IdeaProjects/YiWangNoChangXue/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Notification.DisplayName-DoNotAsk-Kubernetes Notifications": "Kubernetes",
+    "Notification.DoNotAsk-Kubernetes Notifications": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Web__design",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_directory_selection": "C:/Users/14838/IdeaProjects/YiWangNoChangXue/src/test/java",
+    "last_opened_file_path": "D:/JavaWeb/SPM-9/src/main/webapp/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;java.sql.Driver&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "java.sql.Driver",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaWeb\SPM-9\src\main\webapp\images" />
+      <recent name="C:\Users\Lenovo\Desktop\SPM-9\src\main\webapp\images" />
       <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\resources" />
       <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\java\com\fxxkyiwangchangxue\yiwangnochangxue\Service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaWeb\SPM-9\src\main\webapp" />
+      <recent name="D:\JavaWeb\SPM-9\src\main\webapp\html" />
+      <recent name="D:\JavaWeb\SPM-9\src\main\webapp\images" />
+      <recent name="C:\Users\Lenovo\Desktop\SPM-9\src\main\webapp\images" />
       <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\resources\com\fxxkyiwangchangxue\yiwangnochangxue\DAO\mapper" />
-      <recent name="C:\Users\14838\IdeaProjects\YiWangNoChangXue\src\main\resources\com\fxxkyiwangchangxue\yiwangnochangxue" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.fxxkyiwangchangxue.yiwangnochangxue" />
@@ -124,7 +140,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Local Tomcat 10.1.13">
-    <configuration name="GetSignInforTest.testGetAppSignList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommentTesr.testInsertComment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YiWangNoChangXue" />
       <extension name="coverage">
         <pattern>
@@ -133,14 +149,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.GetSignInforTest" />
-      <option name="METHOD_NAME" value="testGetAppSignList" />
+      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.CommentTesr" />
+      <option name="METHOD_NAME" value="testInsertComment" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetSignInforTest.testIsOvertime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommentTesr.testSelectByCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YiWangNoChangXue" />
       <extension name="coverage">
         <pattern>
@@ -149,8 +165,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.GetSignInforTest" />
-      <option name="METHOD_NAME" value="testIsOvertime" />
+      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.CommentTesr" />
+      <option name="METHOD_NAME" value="testSelectByCount" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -172,37 +188,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserSignMapperTest.testSelectAllByTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YiWangNoChangXue" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.UserSignMapperTest" />
-      <option name="METHOD_NAME" value="testSelectAllByTime" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="AndroidDisplay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SPM-9/src/main/webapp/images/AndroidDisplay.html" useBuiltInWebServerPort="true">
+      <method v="2" />
     </configuration>
-    <configuration name="UserSignMapperTest.testSelectById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YiWangNoChangXue" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.fxxkyiwangchangxue.yiwangnochangxue.dao.UserSignMapperTest" />
-      <option name="METHOD_NAME" value="testSelectById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SPM-9/src/main/webapp/images/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
     </configuration>
     <configuration name="Local Tomcat 10.1.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.13" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
@@ -364,21 +354,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.AndroidDisplay.html" />
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="JUnit.CommentTesr.testInsertComment" />
+      <item itemvalue="JUnit.CommentTesr.testSelectByCount" />
       <item itemvalue="JUnit.UserSignMapperTest.testInsertNewSign" />
-      <item itemvalue="JUnit.UserSignMapperTest.testSelectAllByTime" />
-      <item itemvalue="JUnit.GetSignInforTest.testGetAppSignList" />
-      <item itemvalue="JUnit.GetSignInforTest.testIsOvertime" />
-      <item itemvalue="JUnit.UserSignMapperTest.testSelectById" />
       <item itemvalue="Tomcat Server.Local Tomcat 10.1.13" />
       <item itemvalue="Tomcat Server.Tomcat 10.1.13" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.AndroidDisplay.html" />
+        <item itemvalue="JUnit.CommentTesr.testSelectByCount" />
+        <item itemvalue="JUnit.CommentTesr.testInsertComment" />
         <item itemvalue="JUnit.UserSignMapperTest.testInsertNewSign" />
-        <item itemvalue="JUnit.UserSignMapperTest.testSelectById" />
-        <item itemvalue="JUnit.GetSignInforTest.testIsOvertime" />
-        <item itemvalue="JUnit.GetSignInforTest.testGetAppSignList" />
-        <item itemvalue="JUnit.UserSignMapperTest.testSelectAllByTime" />
       </list>
     </recent_temporary>
   </component>
@@ -450,6 +440,19 @@
       <workItem from="1702619339018" duration="4755000" />
       <workItem from="1702649526583" duration="460000" />
       <workItem from="1702689710090" duration="733000" />
+      <workItem from="1702885277247" duration="2670000" />
+      <workItem from="1702954251187" duration="2554000" />
+      <workItem from="1702980550712" duration="2647000" />
+      <workItem from="1702991073218" duration="1436000" />
+      <workItem from="1702996994175" duration="2428000" />
+      <workItem from="1703034951170" duration="1120000" />
+      <workItem from="1703043578180" duration="595000" />
+      <workItem from="1703076273025" duration="14000" />
+      <workItem from="1703104008322" duration="4140000" />
+      <workItem from="1703174881836" duration="1697000" />
+      <workItem from="1703176588910" duration="936000" />
+      <workItem from="1703210482276" duration="12000" />
+      <workItem from="1703299829902" duration="8338000" />
     </task>
     <task id="LOCAL-00001" summary="项目基本">
       <option name="closed" value="true" />
@@ -547,7 +550,55 @@
       <option name="project" value="LOCAL" />
       <updated>1702399589377</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="教师发布签到完成">
+      <option name="closed" value="true" />
+      <created>1702885365350</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702885365350</updated>
+    </task>
+    <task id="LOCAL-00014" summary="web前端">
+      <option name="closed" value="true" />
+      <created>1702997033988</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702997033988</updated>
+    </task>
+    <task id="LOCAL-00015" summary="修改了页面头部和尾部">
+      <option name="closed" value="true" />
+      <created>1703035757652</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1703035757652</updated>
+    </task>
+    <task id="LOCAL-00016" summary="合并功能，但缺少内容">
+      <option name="closed" value="true" />
+      <created>1703334577669</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703334577669</updated>
+    </task>
+    <task id="LOCAL-00017" summary="合并功能，但缺少内容1">
+      <option name="closed" value="true" />
+      <created>1703334597571</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1703334597571</updated>
+    </task>
+    <task id="LOCAL-00018" summary="调整了跳转app二维码页面和英译中">
+      <option name="closed" value="true" />
+      <created>1703337094901</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1703337094901</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,7 +615,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="WJ_Feature" />
+                        <option value="Web_design" />
                       </list>
                     </value>
                   </entry>
@@ -585,7 +636,13 @@
     <MESSAGE value="实现签到的基本需求" />
     <MESSAGE value="12.12：22" />
     <MESSAGE value="签到功能调试成功" />
-    <option name="LAST_COMMIT_MESSAGE" value="签到功能调试成功" />
+    <MESSAGE value="教师发布签到完成" />
+    <MESSAGE value="web前端" />
+    <MESSAGE value="修改了页面头部和尾部" />
+    <MESSAGE value="合并功能，但缺少内容" />
+    <MESSAGE value="合并功能，但缺少内容1" />
+    <MESSAGE value="调整了跳转app二维码页面和英译中" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整了跳转app二维码页面和英译中" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -594,11 +651,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/entity/UserSign.java</url>
           <line>20</line>
           <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/fxxkyiwangchangxue/yiwangnochangxue/service/sign/GetSignInfor.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
